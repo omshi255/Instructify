@@ -6,9 +6,11 @@ import { ToastContainer, toast , Zoom } from 'react-toastify'; // Import Toastif
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify styles
 import './Login.css';
 import animationData from '../animations/Animation - 1745128919432.json'; // Update path as per your file structure
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // For the eye icon to toggle password visibility
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Navbar from '../components/Navbar'; // For the eye icon to toggle password visibility
 
 const Login = () => {
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -74,6 +76,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="login-container">
       <div className="login-left">
         <Lottie options={defaultOptions} height={400} width={400} />
@@ -129,7 +133,7 @@ const Login = () => {
   transition="zoom"
 />
     </div>
-  );
+    </> );
 };
 
 export default Login;

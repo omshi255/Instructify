@@ -2,6 +2,7 @@ import React from "react";
 import "./Hero.css";
 import Lottie from "react-lottie";
 import animationData from "../animations/Animation - 1745147608101.json"; // Update path as per your file structure
+import Navbar from "../pages/DashboardNavbar";
 
 const HeroSection = () => {
   const defaultOptions = {
@@ -13,7 +14,8 @@ const HeroSection = () => {
     }
   };
 
-  return (
+  return (<>
+    <Navbar/>
     <section className="hero">
      <div className="hero-text">
   <p className="tagline animated-text">Start your favourite course<span className="emoji">🎓</span></p>
@@ -85,7 +87,7 @@ const HeroSection = () => {
        
       </div>
     </section>
-  );
+    </>);
 };
 
 export default HeroSection;

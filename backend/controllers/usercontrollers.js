@@ -108,5 +108,11 @@ const loginUser = async (req, res) => {
   const logoutUser = (req, res) => {
     res.status(200).json({ message: "Logout successful" });
   };
+
+  const getCurrentUser = (req, res) => {
+    const user = req.user; // This will be populated by the protect middleware
+    console.log("Current user:", user);
+    res.status(200).json({ user });
+  }
   
-  export { registerUser, loginUser, logoutUser };
+  export { registerUser, loginUser, logoutUser,getCurrentUser };

@@ -1,6 +1,6 @@
 // routes/authRoutes.js
 import express from 'express';
-import { registerUser, loginUser, logoutUser  } from '../controllers/usercontrollers.js';
+import { registerUser, loginUser, logoutUser,getCurrentUser  } from '../controllers/usercontrollers.js';
 import { protect } from '../middleware/Authmiddleware.js'; // Import the protect middleware
 import { upload } from "../middleware/multerConfig.js";
 import { getUserProfile } from '../controllers/usercontrollers.js';
@@ -17,13 +17,7 @@ router.post('/login', loginUser);
 
 // @route   POST /api/auth/logout
 router.post('/logout', protect, logoutUser);
-
-
-
-
-
-
-
+router.get('/me', protect, getCurrentUser);
 
 export default router;
 

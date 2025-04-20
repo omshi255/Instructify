@@ -7,6 +7,7 @@ import './Register.css';
 import { toast, ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import Navbar from '../components/Navbar';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -102,6 +103,9 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Navbar/>
+ 
     <div className="register-container">
       <div className="register-left">
         <Player
@@ -169,6 +173,7 @@ const Register = () => {
         transition={Zoom}
       />
     </div>
+    </>
   );
 };
 
