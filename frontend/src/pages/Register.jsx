@@ -89,6 +89,7 @@ const Register = () => {
       });
 
       console.log('✅ User registered successfully:', response.data);
+      localStorage.setItem('token', response.data.token);
       toast.success('Registration successful! Please login.');
 
       setTimeout(() => {
