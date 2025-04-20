@@ -1,11 +1,11 @@
-import multer from "multer";
-import path from "path";
-import { v4 as uuidv4 } from "uuid";
-import fs from "fs";
+import multer from 'multer';
+import path from 'path';
+import { v4 as uuidv4 } from 'uuid';
+import fs from 'fs';
 
-const uploadDir = "uploads"; // Define the upload directory
+const uploadDir = 'uploads';
 
-// Check if the upload directory exists, if not create it
+// Create upload directory if it doesn’t exist
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
   console.log(`Directory '${uploadDir}' created successfully.`);
@@ -25,28 +25,21 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
   const allowedTypes = [
-    "application/pdf", // PDF files
-    "application/msword", // .doc files
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // .docx files
-    "application/vnd.ms-powerpoint", // .ppt files
-    "application/vnd.openxmlformats-officedocument.presentationml.presentation", // .pptx files
-    "application/vnd.ms-excel", // .xls files
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // .xlsx files
-    "image/jpeg", // JPEG images
-    "image/png", // PNG images
-    "image/jpg", // JPG images
-    "image/gif", // GIF images
+    'image/jpeg', // JPEG images
+    'image/png', // PNG images
+    'image/jpg', // JPG images
+    'image/gif', // GIF images
   ];
 
   if (allowedTypes.includes(file.mimetype)) {
     cb(null, true);
   } else {
-    cb(new Error("File type not allowed"), false);
+    cb(new Error('Only image files (JPEG, PNG, JPG, GIF) are allowed'), false);
   }
 };
 
 export const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 200 * 1024 * 1024 }, // Max file size: 200MB
+  limits: { fileSize: 5 * 1024 * 1024 }, // Limit to 5MB for images
 });

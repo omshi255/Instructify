@@ -3,55 +3,73 @@ import User from '../models/user.js';  // Ensure this path is correct
 import bcrypt from 'bcryptjs';
 import { log } from 'console';
 import jwt from 'jsonwebtoken';
+import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs/promises';
 
 
 
 // Register User
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
-  let {profilePic} = req.body; // Get profilePic from request body
-  
-    
+
+  // Validate text fields
+  if (!name || !email || !password) {
+    return res.status(400).json({ message: 'Please provide name, email, and password' });
+  }
 
   try {
     // Check existing user
     const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: "User already exists" });
+    if (existingUser) {
+      return res.status(400).json({ message: 'User already exists' });
+    }
 
     // Hash password
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Check if profilePic is provided
-    if (profilePic) {
-      const uploadResponse = await cloudinary.uploader.upload(profilePic, {
-        folder: "profilePic",
-      });
-      profilePic = uploadResponse.secure_url;
+    // Handle profilePic upload to Cloudinary
+    let profilePic = null;
+    if (req.file) {
+      try {
+        const uploadResponse = await cloudinary.uploader.upload(req.file.path, {
+          folder: 'profilePic',
+        });
+        profilePic = uploadResponse.secure_url;
+
+        // Delete temporary file
+        await fs.unlink(req.file.path);
+      } catch (uploadError) {
+        console.error('Cloudinary upload error:', uploadError.message);
+        return res.status(500).json({ message: 'Failed to upload profile picture' });
+      }
     }
 
-    // Save user with profile pic
+    // Save user with profilePic
     const newUser = await User.create({
       name,
       email,
       password: hashedPassword,
-      profilePic
+      profilePic,
     });
 
     // Create token
-    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, { expiresIn: '7d' });
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+      expiresIn: '7d',
+    });
 
     res.status(201).json({
-      message: "User registered successfully",
+      message: 'User registered successfully',
       token,
       user: {
         id: newUser._id,
         name: newUser.name,
         email: newUser.email,
-        profilePic: newUser.profilePic
-      }
+        profilePic: newUser.profilePic,
+      },
     });
   } catch (err) {
-    res.status(500).json({ message: "Server Error", error: err.message });
+    console.error('Error in registerUser:', err.message);
+    res.status(500).json({ message: 'Server Error', error: err.message });
   }
 };
 
