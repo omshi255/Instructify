@@ -3,6 +3,7 @@ import express from 'express';
 import { registerUser, loginUser, logoutUser  } from '../controllers/usercontrollers.js';
 import { protect } from '../middleware/Authmiddleware.js'; // Import the protect middleware
 import { upload } from "../middleware/multerConfig.js";
+import { getUserProfile } from '../controllers/usercontrollers.js';
 // import upload from '../config/multer.js'; // Import the multer configuration
 
 const router = express.Router();
@@ -10,7 +11,7 @@ router.post('/register', upload.single('profilePic'), registerUser);
 
 // @route   POST /api/auth/register
 // router.post('/register', registerUser);
- 
+router.get('/profile', protect, getUserProfile);
 // @route   POST /api/auth/login
 router.post('/login', loginUser);
 
