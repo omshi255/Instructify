@@ -121,6 +121,5 @@ Instructify is a full-stack skill sharing platform where users can either learn 
 
 
 ## 🧩 MongoDB Schema Diagram
-
 ![Instructify DB Schema](./instructify_db_schema.png)
 Made with ❤️ using MERN stack by Swati sen
