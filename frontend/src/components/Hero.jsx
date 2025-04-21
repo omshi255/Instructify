@@ -76,7 +76,7 @@ const HeroSection = () => {
 
         {/* Circle Video */}
         <video autoPlay loop muted playsInline className="hero-video-circle">
-          <source src="https://videos.pexels.com/video-files/6985520/6985520-uhd_2560_1440_25fps.mp4" />
+          <source src="https://videos.pexels.com/video-files/6985519/6985519-uhd_2560_1440_25fps.mp4" />
         </video>
 
         {/* Lottie Animation */}

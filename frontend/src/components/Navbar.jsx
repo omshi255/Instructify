@@ -27,13 +27,13 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="#explore">Explore</a>
           </li>
 
           {/* Services Dropdown */}
           <li className="dropdown" onClick={toggleDropdown}>
             <a href="#services" className="dropdown-toggle">
-              Services{" "}
+              Catagories{" "}
               <i className={`fas fa-caret-${dropdownOpen ? "up" : "down"}`} />
             </a>
             {dropdownOpen && (
