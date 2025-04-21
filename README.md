@@ -31,11 +31,21 @@ Instructify is a full-stack skill sharing platform where users can either learn 
 - Change password
 - Role-based access: student / instructor / admin
 
-### 📊 Dashboard
-- If **student**: View enrolled courses
-- If **instructor**: View created courses
+### 🔥  Dashboard Section
+#### 🔁 Works for All Users
 
----
+Section	Description
+🧠 My Teaching Skills	Skills you're ready to teach (editable)
+📚 My Courses	Courses you've created (with lessons)
+➕ Create Course	Add course with title, lessons, etc.
+🎯 My Learning Interests	Skills you want to learn
+📈 Learning Progress	Track % of completed lessons
+▶️ Continue Learning	Resume last watched lessons
+📌 Bookmarked Courses	Saved to watch later
+🤝 Skill Exchange Matches	Mutual matches based on skills
+💬 My Reviews	Reviews given & received
+🏅 My Power Score	Credibility points & badge: Skill Seeker, etc.
+⚙️ Profile Settings	Update name, bio, password, etc.
 
 ## 🎓 Student Features
 
