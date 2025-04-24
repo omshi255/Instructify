@@ -31,11 +31,41 @@ Instructify is a full-stack skill sharing platform where users can either learn 
 - Change password
 - Role-based access: student / instructor / admin
 
-### 📊 Dashboard
-- If **student**: View enrolled courses
-- If **instructor**: View created courses
+# 📊 User Dashboard — Instructify Skill Sharing App
+
+Welcome to the unified user dashboard for the Skill Sharing App, where anyone can teach and learn skills for free — and grow their credibility through knowledge exchange 🚀
 
 ---
+
+## 🔥 Final Dashboard Sections (for All Users)
+
+| Section | Description |
+|--------|-------------|
+| 🧠 **My Teaching Skills** | Skills you're ready to teach (editable) |
+| 📚 **My Courses** | Courses you've created (with lessons) |
+| ➕ **Create Course** | Add course with title, lessons, etc. |
+| 🎯 **My Learning Interests** | Skills you want to learn |
+| 📈 **Learning Progress** | Track % of completed lessons |
+| ▶️ **Continue Learning** | Resume last watched lessons |
+| 📌 **Bookmarked Courses** | Saved to watch later |
+| 🤝 **Skill Exchange Matches** | Mutual matches based on skills |
+| 💬 **My Reviews** | Reviews given & received |
+| 🏅 **My Power Score** | Credibility points & badge (auto-calculated) |
+| ⚙️ **Profile Settings** | Update name, bio, avatar, password, etc. |
+
+---
+
+## 🧠 Badge System
+
+A fun way to encourage users based on their participation in skill sharing!
+
+| Badge | Shown As | Earned When |
+|-------|----------|-------------|
+| 🟢 **Skill Seeker** | `Skill Seeker` | User has filled only learning interests |
+| 🔵 **Skill Sharer** | `Skill Sharer` | User has filled only teaching skills |
+| 🟣 **Skill Swapper** | `Skill Swapper` | User has filled both teaching & learning |
+| ⚫ **Inactive** | `Inactive` | No skills shared or learning interests yet |
+
 
 ## 🎓 Student Features
 
@@ -120,6 +150,12 @@ Instructify is a full-stack skill sharing platform where users can either learn 
 ---
 
 
+
 ## 🧩 MongoDB Schema Diagram
-![Instructify DB Schema](./instructify_db_schema.png)
+
+![Instructify DB Schema](./instructify_db_schema%20-%20Copy.png)
+
+
+
+
 Made with ❤️ using MERN stack by Swati sen
