@@ -5,6 +5,8 @@ import connectDB from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import cors from 'cors';
 import { v2 as cloudinary } from "cloudinary";
+import teachingSkillRoutes from './routes/teachingSkillRoutes.js';
+
 
 
 dotenv.config(); // Load environment variables
@@ -23,8 +25,9 @@ app.use(cors()); // Enable CORS
 app.use(express.json()); // Parse JSON requests
 //all api
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded requests
-//all api
 app.use('/api/auth', authRoutes);
+app.use('/api/teaching-skills', teachingSkillRoutes);
+
 
 app.get('/', (req, res) => {
   res.send(' API is running...');
