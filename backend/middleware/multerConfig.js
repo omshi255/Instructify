@@ -28,7 +28,8 @@ const fileFilter = (req, file, cb) => {
     'image/jpeg', // JPEG images
     'image/png', // PNG images
     'image/jpg', // JPG images
-    'image/gif', // GIF images
+    'image/gif',
+    'application/pdf', // GIF images
   ];
 
   if (allowedTypes.includes(file.mimetype)) {
@@ -41,5 +42,5 @@ const fileFilter = (req, file, cb) => {
 export const upload = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 5 * 1024 * 1024 }, // Limit to 5MB for images
+  limits: { fileSize: 10 * 1024 * 1024 }, // Limit to 5MB for images
 });

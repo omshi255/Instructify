@@ -1,0 +1,118 @@
+/* LearningInterests.css */
+body
+{
+  background: linear-gradient(135deg, #f3e5f5, #e0f7fa);;
+}
+.learning-container {
+    padding: 30px;
+    max-width: 700px;
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    margin-top: 70px;
+  }
+  
+  .learning-title {
+    text-align: start;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #333;
+  }
+  
+  .add-interest-btn {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+   width: 100px;
+  }
+  
+  .add-interest-btn:hover {
+    background-color: #43A047;
+  }
+  
+  .interest-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  
+  .interest-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .submit-btn :hover
+  {
+    background-color: #4CAF50;
+  }
+
+  .interest-list {
+    margin-top: 20px;
+  }
+  
+  .interest-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+  
+  .interest-name {
+    font-size: 17px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .delete-btn-dis {
+    padding: 6px 12px;
+    background-color: #FF5733;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    width: 100px;
+    cursor: pointer;
+    
+  }
+  .delete-btn-dis:hover
+  {
+    background-color: #FF5733;
+    color: white;
+  }
+  
+ 
+  
+  .no-interests {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  

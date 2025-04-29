@@ -87,6 +87,26 @@ const HeroSection = () => {
        
       </div>
     </section>
+
+    <section className="features-section">
+  <div className="feature-card">
+    <i className="fas fa-book-open feature-icon"></i>
+    <p className="feature-text">100,000 online courses</p>
+  </div>
+  <div className="feature-card">
+    <i className="fas fa-chalkboard-teacher feature-icon"></i>
+    <p className="feature-text">Expert instruction</p>
+  </div>
+  <div className="feature-card">
+    <i className="fas fa-infinity feature-icon"></i>
+    <p className="feature-text">Lifetime access</p>
+  </div>
+  <div className="feature-card">
+    <i className="fas fa-video feature-icon"></i>
+    <p className="feature-text">Live Video Classes</p>
+  </div>
+</section>
+
     </>);
 };
 

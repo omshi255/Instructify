@@ -17,6 +17,7 @@
     align-items: center;
     min-height: 500px;
     padding: 10px;
+    margin-top: 90px;
     background-color: var(--light-background);
     gap: 3rem;
     flex-wrap: wrap;

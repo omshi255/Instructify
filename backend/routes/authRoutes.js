@@ -1,6 +1,12 @@
 // routes/authRoutes.js
 import express from 'express';
-import { registerUser, loginUser, logoutUser,getCurrentUser  } from '../controllers/usercontrollers.js';
+import { registerUser, loginUser,
+     logoutUser,getCurrentUser
+      ,updateUserProfile ,
+       deleteUserProfile ,
+       addLearningInterest 
+       ,removeLearningInterest 
+       ,getLearningInterests} from '../controllers/usercontrollers.js';
 import { protect } from '../middleware/Authmiddleware.js'; // Import the protect middleware
 import { upload } from "../middleware/multerConfig.js";
 import { getUserProfile } from '../controllers/usercontrollers.js';
@@ -18,6 +24,13 @@ router.post('/login', loginUser);
 // @route   POST /api/auth/logout
 router.post('/logout', protect, logoutUser);
 router.get('/me', protect, getCurrentUser);
+// Update User Profile
+router.put('/update-profile', protect, updateUserProfile); 
+
+// Delete User Profile
+router.delete('/delete-profile', protect, deleteUserProfile); // This is the new route for deleting a profile
+router.post('/add-learning-interest', protect, addLearningInterest); // This is the new route for adding a learning interest
+router.delete('/delete-learning-interest', protect, removeLearningInterest); // This is the new route for deleting a learning interest
+router.get('/get-learning-interest', protect, getLearningInterests); // This is the new route for getting a user profile
 
 export default router;
-

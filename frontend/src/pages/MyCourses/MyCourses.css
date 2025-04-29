@@ -1,0 +1,205 @@
+/* ----- Course Item ----- */
+.course-item {
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 350px;
+}
+.my-courses-container
+{
+  width: 1440px;
+  
+ 
+}
+.course-list
+  {
+display: flex;
+gap: 30px;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-between;
+align-items: center;
+  }              
+.editbtn
+{
+  background: #38a169;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+}
+.deletebtn
+{
+  background: #e53e3e;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+
+  transition: all 0.3s ease;
+}
+.deletebtn:hover
+{
+  background-color: rgb(203, 61, 35);
+}
+.course-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: #38a169;
+  transition: all 0.3s ease;
+}
+
+.course-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
+
+.course-item:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ----- Buttons Styling ----- */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Common button style */
+/* .actions button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100px;
+  transition: all 0.3s ease;
+  background-color: red;
+} */
+
+/* Edit button */
+.edit-btn {
+  background-color: #38a169;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: white;
+  color: #38a169;
+  border-color: #38a169;
+}
+
+/* Delete button */
+.delete-btn {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: white;
+  color: #e53e3e;
+  border-color: #e53e3e;
+}
+
+/* Lessons Toggle button */
+.lessons-btn {
+  margin-top: 14px;
+  background: #edf2f7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2d3748;
+  transition: all 0.3s ease;
+}
+
+.lessons-btn:hover {
+  background-color: #e2e8f0;
+  transform: scale(1.03);
+}
+
+/* Course Thumbnail */
+.course-thumb {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 1px solid #d1fae5;
+}
+
+/* Title Section */
+.my-courses-title {
+  color: #2f855a;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Lessons Section */
+.lessons {
+  margin-top: 20px;
+}
+.toggle-lessons-btn
+{
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100px;
+  transition: all 0.3s ease;
+  margin-left: 70px;
+
+}
+/* Lesson Card */
+.lesson-card {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(72, 187, 120, 0.1);
+  border-left: 5px solid #38a169;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

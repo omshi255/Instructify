@@ -5,14 +5,10 @@
     border-radius: 50%;
   }
   
-  .user-email {
-    flex: 1;
-    text-align: center;
-    font-weight: bold;
-  }
+ 
   
   .logout-btn {
-    background-color: #ef4444;
+    background-color: #4caf50;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -20,8 +16,676 @@
     cursor: pointer;
   }
   
+  
   .dashboard-body {
-    padding: 40px;
-    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+ 
+  
+   .dashboard-grid-9 {
+    display: grid;
+     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    width: 1440px;
+    gap: 20px;
+    margin-top: 20px;
+    height: 100vh;
+    
+   
   }
   
+  .dashboard-box {
+    border: none;
+    background-color: white;
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+    align-items: start;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    height: fit-content;
+
+
+  } 
+  .teaching-skills-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .teaching-skill-item {
+    width: calc(33.333% - 20px); 
+    background: #fafbf9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skill-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  
+  .skill-percentage-line {
+    font-size: 12px;
+    color: #ef4444;
+    position: relative;
+  }
+  
+  .percentage-text {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  
+  .underline {
+    height: 4px;
+    background: linear-gradient(90deg, #1fc055 0%, #10f9ce 100%);
+    border-radius: 4px;
+    width: 0;
+    animation: growLine 1s forwards;
+    animation-timing-function: ease-out;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes growLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--final-width);
+    }
+  }
+  
+  /* Teaching Skills List Container */
+.teaching-skills-list-container {
+  padding: 10px;
+}
+
+/* Teaching Skills List */
+.teaching-skills-list {
+  list-style-type: disc; /* Normal bullets */
+  padding-left: 20px;
+}
+
+/* Each Skill Item */
+.teaching-skill-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+.teaching-skills-list {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.teaching-skill-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+  .courses-container {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .courses-left-panel {
+    width: 100%;
+  }
+  
+  .courses-section-inside {
+    margin-top: 10px;
+    width: 100%;
+    height: 570px;
+    overflow-y: auto;
+  }
+  
+  /* Course Card */
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: transparent;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 500px;
+    background-color: #fafbf9;
+    height: fit-content;
+  }
+  
+  /* Top Part (Header) */
+  .course-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Thumbnail Circular */
+  .course-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  /* Course Details */
+  .course-details {
+    flex: 1;
+  }
+  
+  .course-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .course-description {
+    font-size: 14px;
+    color: #666;
+    display: none;
+  }
+  
+  .course-price {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #4caf50;
+  }
+  
+  .course-category {
+    font-size: 13px;
+    color: #ef4444;
+    font-weight: 600;
+  }
+  
+  /* Buttons Section */
+  .course-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-end;
+   
+  }
+  .btn-toggle-lessons
+  {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    background-color: #4caf50;
+
+    
+  }
+  
+  /* Buttons */
+  .btn-delete
+   {
+    
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #ef4444;
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
+  
+  .btn-delete:hover {
+    background-color:transparent;
+  }
+  
+  /* Lessons Section */
+  .course-lessons {
+    margin-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .lesson-item {
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  .progress-spinner-container
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .dashboard-heading {
+    font-size: 19px;
+    color: #f44336;
+    text-align: end;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+    margin-top: 20px;
+   
+
+  }
+  /* .progress-graph-section {
+  margin-top: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the items horizontally 
+  justify-content: center; /* Centers the items vertically 
+  text-align: center; /* Center text inside the container 
+} */
+.progress-graph-section {
+  margin-top: 20px; /* Adjusted margin to allow more space */
+  margin-right: 30px; /* Adjusted margin */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; /* Ensure it takes the full width */
+  max-width: 600px; /* Adjust maximum width */
+  height: 300px; /* Set height for the graph container */
+  padding: 20px; /* Add padding for spacing */
+}
+
+
+.progress-message {
+  margin-top: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #ef4444;
+  font-size: 15px;
+  margin-left: 40px;
+}
+
+  .dashboard-heading::after {
+    content: "";
+    display: block;
+    margin: 10px auto 0;
+    width: 0;
+    height: 3px;
+    background: #4caf50;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  .dashboard-heading:hover::after {
+    width: 100%;
+  }
+  
+  /* 👇 Emoji ke liye smooth wave effect */
+  .emoji {
+    display: inline-block;
+    margin-left: 10px;
+    animation: waveHand 2s infinite;
+    transform-origin: 70% 70%;
+  }
+  
+  /* Heading popin effect */
+  @keyframes popin {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* 🖐️ Natural wave (tilt) hand animation */
+  @keyframes waveHand {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(-2deg); }
+    70% { transform: rotate(6deg); }
+    80% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  .profile-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 400px;
+    height: 460px;
+    margin: 0 auto;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+
+.username {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e53935;
+}
+
+p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.learning-interests {
+    margin-top: 12px;
+}
+.para {
+  font-size: 16px;  /* Default font size for the paragraph */
+  margin-bottom: 5px;
+  color: #e53935;  /* Add some space between each paragraph */
+}
+
+.heading {
+  font-weight: bold;
+  color: #4CAF50;  /* Color for the heading text (strong) */
+}
+
+.para strong {
+  color: #4CAF50;  /* Change heading text color */
+}
+
+.para {
+  color: #333;  /* Color for the paragraph text */
+}
+
+/* .para:nth-child(odd) {
+  background-color: #f9f9f9;  /* Light gray background for odd paragraphs 
+}
+
+.para:nth-child(even) {
+  background-color: #fff;  /* White background for even paragraphs 
+} */
+
+
+.learning-interests strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1rem;
+}
+
+.learning-interests ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.learning-interests li {
+   background: linear-gradient(135deg, #f3e5f5, #e0f7fa);;
+    color: #f44336;
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.profile-actions .btn {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  
+}
+
+.profile-actions .btn.update-btn {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.update-btn:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+}
+
+.profile-actions .btn.delete-btn {
+    background-color: #f44336;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 16px;
+    }
+
+    .profile-img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .username {
+        font-size: 1.25rem;
+    }
+}
+
+.half-circle-wrapper {
+  position: relative;
+  width: 150px;
+  height: 100px; /* Half of width */
+  margin: 0 auto 10px;
+  overflow: hidden;
+  margin-left: 130px;
+  margin-top: 50px;
+}
+
+.half-circle-base {
+  width: 150px;
+  height: 150px;
+  background: #e0e0e0;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.half-circle-fill {
+  width: 150px;
+  height: 150px;
+  background: #4caf50; /* Green fill */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: center top;
+  transition: transform 0.5s ease;
+}
+
+.profile-completion-section p {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: #333;
+  margin-left: 150px;
+ 
+ 
+}
+.marks-distribution {
+  margin-top: 15px;
+  text-align: left;
+  font-size: 16px;
+  margin-left: 40px;
+
+}
+
+.marks-distribution h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f44336;
+  text-align: center;
+
+  margin-bottom: 10px;
+}
+
+.marks-distribution ul {
+  list-style-type: none; /* Removing default bullets */
+  padding-left: 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+}
+
+.marks-distribution li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marks-distribution li::before {
+  content: "✔️";
+  margin-right: 10px;
+  color: #4caf50; /* Green checkmark */
+}
+.head-circle
+{
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.head-circle i
+{
+  color: #4CAF50; /* Green tone */
+  font-size: 22px;
+}
+.marks-distribution li.not-filled::before {
+  content: "❌";
+  margin-right: 10px;
+  color: #f44336; /* Red cross */
+}
+.graph-heading {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.graph-heading i {
+  color: #4CAF50; /* Green tone */
+  font-size: 22px;
+}
+.profile-heading-user {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-heading-user i {
+  color: #4caf50; /* green accent */
+  font-size: 24px;
+}
+.teachingskills-heading-h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.teachingskills-heading-h3 i {
+  color: #4caf50;
+  font-size: 20px;
+}
+.course-heading-detail
+{
+  font-size: 22px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.course-heading-detail i
+{
+  color: #4caf50;
+  font-size: 20px;
+}

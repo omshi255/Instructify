@@ -283,9 +283,9 @@
     transition: all 0.3s;
   }
   
-  .cssbuttons-io-button:hover .icon {
+  /* .cssbuttons-io-button:hover .icon {
     width: calc(100% - 0.6em);
-  }
+  } */
   
   .cssbuttons-io-button .icon svg {
     width: 1.1em;
@@ -299,5 +299,42 @@
   
   .cssbuttons-io-button:active .icon {
     transform: scale(0.95);
+  }
+  .features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 3rem;
+    background-color: #f0fff4;
+    margin-top: -30px;
+    flex-wrap: wrap;
+    border-top: 1px solid #eee;
+  }
+  
+  .feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-icon {
+    font-size: 2rem;
+    color: #2f855a; /* Your theme blue */
+    margin-bottom: 10px;
+  }
+  
+  .feature-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #4a5568;
   }
   

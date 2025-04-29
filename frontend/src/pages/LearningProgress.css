@@ -1,0 +1,55 @@
+Define root colors
+/* Define root colors */
+:root {
+    --primary-color: #4CAF50; /* Main Green color */
+    --secondary-color: #81C784; /* Light Green color */
+    --hover-color: #388E3C; /* Dark Green for hover effect */
+    --background-color: #E8F5E9; /* Light background color */
+    --text-color: #388E3C; /* Dark Green text color */
+    --button-text-color: #fff; /* White button text color */
+    --lesson-item-bg: #F1F8E9; /* Light green background for lessons */
+    --box-shadow-color: rgba(76, 175, 80, 0.3); /* Box shadow with green tint */
+  }
+  /* Graph Section */
+.graph-section {
+    margin-top: 50px;
+    width: 90%;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+.graph-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.8rem;
+  
+}
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 400px;
+    background-color: var(--background-color);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px var(--box-shadow-color);
+}
+.graph-subtext {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    background: linear-gradient(90deg, #81C784 0%, #4CAF50 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 2s ease-in-out;
+}

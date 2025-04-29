@@ -1,120 +1,177 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import './TeachingSkills.css'; // 👈 Custom CSS
+import { FaTrash, FaPlus, FaEdit, FaSpinner, FaAddressCard } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './TeachingSkills.css';
+import DashboardNavbar from '../pages/DashboardNavbar.jsx';
+import Lottie from "lottie-react";
+import learningAnimation from "../animations/Animation - 1745587232807.json";
 
-const TeachingSkills = () => {
+const SkillsDashboard = () => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const token = localStorage.getItem('token');
+  // ✅ token har request pe fresh uthao
+  const getConfig = () => ({
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+
+  const fetchSkills = useCallback(async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get('http://localhost:5000/api/teachingskills', getConfig());
+      setSkills(data.skills || []);
+    } catch (error) {
+      console.error('Fetch error:', error);
+      toast.error('Failed to fetch skills');
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchSkills = async () => {
-      try {
-        setLoading(true);
-        const res = await axios.get('http://localhost:5000/api/teaching-skills', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setSkills(res.data.skills || []);
-      } catch (err) {
-        console.error('Error fetching skills:', err);
-        toast.error("Failed to load skills.");
-      } finally {
-        setLoading(false);
+    fetchSkills();
+  }, [fetchSkills]);
+
+  const createSkills = async () => {
+    try {
+      if (!newSkill.trim()) {
+        toast.warn('Please enter a skill');
+        return;
       }
-    };
+      setLoading(true);
 
-    if (token) fetchSkills();
-  }, [token]);
-
-  const handleAddSkill = () => {
-    const trimmedSkill = newSkill.trim();
-
-    // 🛑 Validation Checks
-    if (!trimmedSkill) {
-      toast.warning("Skill cannot be empty!");
-      return;
+      await axios.post('http://localhost:5000/api/teachingskills', { skills: [newSkill] }, getConfig());
+      toast.success('Skill added successfully');
+      setNewSkill('');
+      fetchSkills();
+    } catch (error) {
+      console.error('Create error:', error);
+      toast.error(error.response?.data?.message || 'Failed to add skill');
+    } finally {
+      setLoading(false);
     }
-
-    if (trimmedSkill.length < 2) {
-      toast.warning("Skill must be at least 2 characters.");
-      return;
-    }
-
-    if (/^\d+$/.test(trimmedSkill)) {
-      toast.warning("Skill name can't be all numbers.");
-      return;
-    }
-
-    const isDuplicate = skills.some(skill => skill.toLowerCase() === trimmedSkill.toLowerCase());
-    if (isDuplicate) {
-      toast.info("Skill already added.");
-      return;
-    }
-
-    if (skills.length >= 25) {
-      toast.error("You can only add up to 25 skills.");
-      return;
-    }
-
-    // ✅ Add skill
-    setSkills([...skills, trimmedSkill]);
-    setNewSkill('');
-    toast.success("Skill added!");
   };
 
-  const handleSave = async () => {
+  const updateSkills = async () => {
     try {
-      await axios.put(
-        'http://localhost:5000/api/teaching-skills',
-        { skills },
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      );
-      toast.success('Skills saved successfully!');
-    } catch (err) {
-      console.error('Error saving skills:', err);
-      toast.error('Failed to save skills.');
+      await axios.put('http://localhost:5000/api/teachingskills', { skills }, getConfig());
+      toast.success('Skills updated successfully');
+    } catch (error) {
+      console.error('Update error:', error);
+      toast.error('Failed to update skills');
+    }
+  };
+
+  const deleteSkill = async (skill) => {
+    try {
+      await axios.patch('http://localhost:5000/api/teachingskills/delete-skill', { skill }, getConfig());
+      toast.success(`Deleted skill: ${skill}`);
+      fetchSkills();
+    } catch (error) {
+      console.error('Delete skill error:', error);
+      toast.error('Failed to delete skill');
+    }
+  };
+
+  const deleteAllSkills = async () => {
+    try {
+      await axios.delete('http://localhost:5000/api/teachingskills/all', getConfig());
+      toast.success('All skills deleted successfully');
+      setSkills([]);
+    } catch (error) {
+      console.error('Delete all error:', error);
+      toast.error('Failed to delete all skills');
     }
   };
 
   return (
-    <div className="skills-container">
-      <h1 className="skills-heading">🧠 My Teaching Skills</h1>
-
-      {loading ? (
-        <p className="loading">Loading...</p>
-      ) : (
-        <div className="skills-content">
-          <ul className="skills-list">
-            {skills.map((skill, index) => (
-              <li key={index} className="skill-item">{skill}</li>
-            ))}
-          </ul>
-
-          <div className="input-group">
-            <input
-              className="skill-input"
-              value={newSkill}
-              onChange={(e) => setNewSkill(e.target.value)}
-              placeholder="Add a new skill"
-            />
-            <button className="add-btn" onClick={handleAddSkill}>Add</button>
+    <>
+      <DashboardNavbar />
+      <div className="dashboard">
+        <div className="dashboard-container-two-column">
+          {/* Left side: Animation */}
+          <div className="dashboard-animation">
+            <Lottie animationData={learningAnimation} loop={true} />
           </div>
 
-          <div className="save-group">
-            <button className="save-btn" onClick={handleSave}>💾 Save Skills</button>
+          {/* Right side: Skills Form + List */}
+          <div className="dashboard-content">
+            <h1 className="dashboard-title"><FaAddressCard /> Teaching Skills.....</h1>
+
+            <div className="add-skill-section">
+              <input
+                type="text"
+                value={newSkill}
+                onChange={(e) => setNewSkill(e.target.value)}
+                placeholder="Enter new skill"
+                className="skill-input"
+              />
+              <button
+                type="button"
+                onClick={createSkills}
+                className="add-btn"
+                disabled={loading}
+              >
+                {loading ? <FaSpinner className="spinner-icon" /> : <FaPlus />}
+              </button>
+            </div>
+
+            {loading && skills.length === 0 ? (
+              <p className="loading-text">Loading skills...</p>
+            ) : skills.length > 0 ? (
+              <div className="skills-grid">
+                {skills.map((skill, idx) => (
+                  <div key={`${skill}-${idx}`} className="skill-card">
+                    <span>{skill}</span>
+                    <button
+                      type="button"
+                      onClick={() => deleteSkill(skill)}
+                      className="delete-btn"
+                      aria-label={`Delete ${skill}`}
+                    >
+                      <FaTrash />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="no-skills-text">No skills added yet.</p>
+            )}
+
+            <div className="actions">
+              <button type="button" onClick={updateSkills} className="update-btn">
+                <FaEdit /> Update Skills
+              </button>
+
+              <button type="button" onClick={deleteAllSkills} className="delete-all-btn">
+                <FaTrash /> Delete All
+              </button>
+            </div>
           </div>
         </div>
-      )}
+      </div>
 
-      <ToastContainer position="top-right" autoClose={2000} />
-    </div>
+      {/* Toastify container */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
+    </>
   );
 };
 
-export default TeachingSkills;
+export default SkillsDashboard;

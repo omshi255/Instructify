@@ -1,0 +1,28 @@
+button {
+    all: unset; /* optional: use this only if you want to remove all default styles */
+    appearance: none;
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+    cursor: pointer;
+  
+    /* Safe defaults */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* Prevent disappearance */
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: inline-flex !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  button:active {
+    opacity: 0.9; /* for click feedback */
+    transform: scale(0.97); /* optional */
+  }
+ 

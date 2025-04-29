@@ -1,0 +1,12 @@
+/* index.css ya App.css me daalna */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* ya koi bhi smooth font */
+    background: linear-gradient(135deg, #f3e5f5, #e0f7fa);
+    min-height: 100vh;
+    width: 100%;
+    background-attachment: fixed; /* scroll pe bhi fixed rahe */
+    background-size: cover;
+  }
+  

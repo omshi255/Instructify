@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../components/navbar.css"
+import "../pages/Dashboardnavbar.css"
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -57,7 +57,7 @@ const Navbar = () => {
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="#about">About</a>
+            <a href="/Dashboard">Dashboard</a>
           </li>
 
           <li className="dropdown" onClick={toggleDropdown}>

@@ -1,15 +1,19 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Logout from './pages/Logout';
-import Hero from './components/Hero';
-
-import Dashboard from './pages/Dashboard';
-import TeachingSkills from './pages/TeachingSkills';
-import ProtectedRoute from './util/ProtectedRoute';
-import DashboardLayout from './pages/DashboardLayout'; // Make sure path is correct
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import MyCourses from "./pages/MyCourses/MyCourses.jsx";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Logout from "./pages/Logout";
+import Hero from "./components/Hero";
+import Dashboard from "./pages/Dashboard";
+import TeachingSkills from "./pages/TeachingSkills";
+import ProtectedRoute from "./util/ProtectedRoute";
+import DashboardLayout from "./pages/DashboardLayout";
+import CourseForm from "./pages/MyCourses/CourseForm.jsx";
+import UpdateProfilePage from "./pages/UpdateProfilePage.jsx";
+import "./App.css";
+import LearningProgress from "./pages/LearningProgress.jsx";
+import LearningInterests from "./pages/LearningInterests.jsx";
 
 const App = () => {
   return (
@@ -21,7 +25,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
 
-        {/* Protected Dashboard Layout */}
+        {/* Protected Routes */}
         <Route
           path="/dashboard"
           element={
@@ -32,10 +36,18 @@ const App = () => {
         >
           <Route index element={<Dashboard />} />
           <Route path="teaching-skills" element={<TeachingSkills />} />
-          {/* ⬇️ Add more dashboard routes here */}
-          {/* <Route path="courses" element={<Courses />} /> */}
-          {/* <Route path="create-course" element={<CreateCourse />} /> */}
-          {/* <Route path="settings" element={<ProfileSettings />} /> */}
+          <Route path="mycourses" element={<MyCourses />} />
+          <Route path="create-course" element={<CourseForm />} />
+          <Route path="/dashboard/mycourse/:id" element={<MyCourses />} />
+          {/* Your new LessonPage Route */}
+          <Route path="/dashboard/progress" element={<LearningProgress/>} />
+          <Route path="/dashboard/interests" element={<LearningInterests />} />
+          <Route path="/dashboard" element={<Dashboard />} />    {/* Dashboard component home par */}
+          <Route path="/dashboard/update-profile" element={<UpdateProfilePage />} /> {/* Update Profile page */}
+          {/* <Route path="/dashboard/intrests" element={<LessonPage/>
+          <Route path="/dashboard/learning/:courseId/:lessonId" element={<LessonPage />} /> */}
+          
+
         </Route>
       </Routes>
     </div>
