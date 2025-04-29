@@ -10,7 +10,7 @@ import fs from 'fs/promises';
 
 // Register User
 const registerUser = async (req, res) => {
-  const { name, email, password , bio , description } = req.body;
+  const { name, email, password , bio , description, linkedin, discord, github, twitter, instagram, facebook, portfolio } = req.body;
 
   // Validate text fields
   if (!name || !email || !password) {
@@ -52,6 +52,13 @@ const registerUser = async (req, res) => {
       profilePic,
       bio,  // Add bio
       description,  // Add description
+      linkedin,
+      discord,
+      github,
+      twitter,
+      instagram,
+      facebook,
+      portfolio,
     });
 
     // Create token
@@ -69,6 +76,13 @@ const registerUser = async (req, res) => {
         profilePic: newUser.profilePic,
         bio: newUser.bio,  // Include bio in response
         description: newUser.description,  // Include description in response
+        linkedin: newUser.linkedin,
+        discord: newUser.discord,
+        github: newUser.github,
+        twitter: newUser.twitter,
+        instagram: newUser.instagram,
+        facebook: newUser.facebook,
+        portfolio: newUser.portfolio,
       },
     });
   } catch (err) {
@@ -118,6 +132,7 @@ const loginUser = async (req, res) => {
           id: user._id,
           name: user.name,
           email: user.email
+
         }
       });
     } catch (err) {
@@ -291,5 +306,23 @@ const getLearningInterests = async (req, res) => {
   }
 };
 
- 
-export { registerUser, loginUser, logoutUser,getCurrentUser ,updateUserProfile , deleteUserProfile,addLearningInterest ,removeLearningInterest ,getLearningInterests };
+ // controllers/usercontrollers.js
+
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await User.find(); // Fetch all users
+    if (!users || users.length === 0) {
+      return res.status(404).json({ message: "No users found" });
+    }
+
+    res.status(200).json({
+      message: "All registered users fetched successfully",
+      users
+    });
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+export { registerUser, loginUser, logoutUser,getCurrentUser ,updateUserProfile , deleteUserProfile,addLearningInterest ,removeLearningInterest ,getLearningInterests,getAllUsers };

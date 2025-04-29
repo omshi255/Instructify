@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #f0fff4;
-    padding: 4rem;
+    padding: 50px;
     min-height: 500px;
     animation: fadeIn 1s ease-in;
     border-radius: 10px; /* Optional for rounded corners */
@@ -325,7 +325,15 @@
   .feature-card:hover {
     transform: translateY(-5px);
   }
-  
+  .button-suscribe
+  {
+    width: 150px;
+    background-color: #2f855a;
+  }
+  .button-suscribe :hover
+  {
+    background-color: #2f855a;
+  }
   .feature-icon {
     font-size: 2rem;
     color: #2f855a; /* Your theme blue */
@@ -337,4 +345,550 @@
     font-weight: 500;
     color: #4a5568;
   }
+/* Testimonials Section */
+.testimonials {
+  padding: 80px 20px;
+  background-color: #f0fff4;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2f855a;
+}
+
+.testimonial-card {
+  margin: 20px auto;
+  padding: 30px;
+  max-width: 650px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.testimonial-card span {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #38a169;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  background-color: #eef2ff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+}
+
+.stat h3 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2f855a;
+}
+
+.stat p {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-top: 10px;
+}
+
+/* Newsletter Section */
+.newsletter {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 60px;
+}
+
+.newsletter h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #38a169;
+}
+
+.newsletter p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 25px;
+}
+
+.newsletter input[type="email"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  width: 300px;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+
+.newsletter input[type="email"]:focus {
+  border-color: #38a169;
+  box-shadow: 0 0 5px rgba(56, 161, 105, 0.5);
+}
+
+.newsletter button {
+  padding: 12px 25px;
+  background-color: #38a169;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+  background-color: #2f855a;
+}
+
+/* Footer Section */
+.footer {
+  padding: 40px 20px;
+  background-color: #2f855a;
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.footer-links a {
+  margin: 0 15px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-socials i {
+  margin: 0 12px;
+  font-size: 22px;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-socials i:hover {
+  color: #38a169;
+}
+
+.footer p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #bbb;
+}
+/* Icon Section */
+.icon-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  background-color: #f0fff4;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  border-top: 1px solid #eee;
+}
+
+.icon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  text-align: center;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.icon-card i {
+  color: #38a169;
+  margin-bottom: 10px;
+}
+
+.icon-card:hover {
+  transform: translateY(-5px);
   
+}
+
+.icon-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+}
+
+.icon-card p {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Container for the section */
+.why-choose-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px 60px;
+  background-color: #f0fff4; /* Lighter background for a clean look */
+  border-radius: 20px;
+  color: #38a169;
+  margin: 80px 0;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+
+/* Left part of the section */
+.why-left {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.why-left h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.why-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-left li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.why-left li i {
+  font-size: 20px;
+  color: #38a169;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.why-left li i:hover {
+  color: #2980b9;
+  transform: scale(1.15);
+}
+
+.why-left li div {
+  display: flex;
+  flex-direction: column;
+}
+
+.why-left li h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.why-left li p {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  line-height: 1.5;
+}
+
+/* Hover effect for each list item */
+
+/* Right part of the section */
+.why-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+}
+.heading-2-instructify
+{
+  margin-top: 30px;
+}
+.why-right .lottie-container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect on Lottie */
+.why-right .lottie-container:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-choose-us {
+    flex-direction: column;
+    padding: 80px 30px;
+  }
+
+  .why-left {
+    margin-bottom: 40px;
+    padding-right: 0;
+  }
+
+  .why-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .why-left li {
+    font-size: 1rem;
+  }
+
+  .why-right {
+    margin-top: 40px;
+  }
+
+  .why-right .lottie-container {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-us {
+    padding: 60px 20px;
+  }
+
+  .why-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .why-left li {
+    font-size: 0.9rem;
+  }
+
+  .why-right .lottie-container {
+    width: 400px;
+    height: 400px;
+  }
+}
+/* ========== Responsive Styles ========== */
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .hero-text,
+  .hero-image {
+    padding: 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-video-triangle,
+  .hero-video-circle {
+    width: 200px;
+    height: 200px;
+  }
+
+  .badge {
+    padding: 0.6rem;
+    font-size: 0.75rem;
+    top: 5%;
+    left: 5%;
+  }
+
+  .courses,
+  .rating {
+    top: auto;
+    left: auto;
+    right: 5%;
+    bottom: 5%;
+    transform: translateX(0);
+    font-size: 0.75rem;
+    padding: 0.6rem;
+  }
+
+  .features-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .testimonials h2 {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+
+  .cssbuttons-io-button {
+    width: 150px;
+    font-size: 16px;
+  }
+
+  .cssbuttons-io-button .icon {
+    width: 2.5em;
+    height: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+
+  .hero-video-triangle,
+  .hero-video-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+
+  .cssbuttons-io-button {
+    font-size: 15px;
+  }
+
+  .cssbuttons-io-button .icon {
+    width: 2em;
+    height: 2em;
+  }
+}/* For screens max-width 1024px */
+@media (max-width: 1024px) {
+  .why-choose-us {
+    flex-direction: column;
+    padding: 80px 30px;
+  }
+
+  .why-left {
+    margin-bottom: 40px;
+    padding-right: 0;
+    text-align: center; /* Align text center for smaller screens */
+  }
+
+  .why-left h2 {
+    font-size: 1.8rem;
+  }
+
+  .why-left li {
+    font-size: 1rem;
+  }
+
+  .why-right {
+    margin-top: 40px;
+  }
+
+  .why-right .lottie-container {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+/* For screens max-width 768px */
+@media (max-width: 768px) {
+  .why-choose-us {
+    padding: 60px 20px;
+  }
+
+  .why-left h2 {
+    font-size: 1.6rem;
+  }
+
+  .why-left li {
+    font-size: 0.9rem;
+  }
+
+  .why-right .lottie-container {
+    width: 400px;
+    height: 400px;
+  }
+
+  /* Adjust margins and padding for smaller devices */
+  .why-choose-us {
+    margin: 50px 0;
+  }
+}
+
+/* For screens max-width 480px */
+@media (max-width: 480px) {
+  .why-choose-us {
+    padding: 40px 15px;
+  }
+
+  .why-left h2 {
+    font-size: 1.4rem;
+  }
+
+  .why-left li {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .why-right .lottie-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  /* Adjust padding and text alignment */
+  .why-left {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .why-right {
+    margin-top: 30px;
+  }
+}

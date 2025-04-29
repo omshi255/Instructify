@@ -14,7 +14,7 @@ import UpdateProfilePage from "./pages/UpdateProfilePage.jsx";
 import "./App.css";
 import LearningProgress from "./pages/LearningProgress.jsx";
 import LearningInterests from "./pages/LearningInterests.jsx";
-
+import FindConnections from "./pages/FindConnections.jsx";
 const App = () => {
   return (
     <div>
@@ -44,12 +44,14 @@ const App = () => {
           <Route path="/dashboard/interests" element={<LearningInterests />} />
           <Route path="/dashboard" element={<Dashboard />} />    {/* Dashboard component home par */}
           <Route path="/dashboard/update-profile" element={<UpdateProfilePage />} /> {/* Update Profile page */}
+          <Route path="/dashboard/connections" element = {<FindConnections/>} />
           {/* <Route path="/dashboard/intrests" element={<LessonPage/>
           <Route path="/dashboard/learning/:courseId/:lessonId" element={<LessonPage />} /> */}
           
 
         </Route>
       </Routes>
+
     </div>
   );
 };

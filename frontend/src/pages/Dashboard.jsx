@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import DashboardNavbar from "../pages/DashboardNavbar.jsx";
 import { useNavigate } from "react-router-dom";
+
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const MyCourses = () => {
@@ -134,9 +135,10 @@ const MyCourses = () => {
 
   return (
     <>
+
       <DashboardNavbar />
       <h3 className="dashboard-heading">
-        {username ? username : 'User'}'s Dashboard...
+        Hii    {username ? username : 'User'}!
         <span className="emoji">👋</span>
       </h3>
       <div className="dashboard-grid-9">

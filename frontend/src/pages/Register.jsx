@@ -19,6 +19,13 @@ const Register = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
+  const [linkedin, setLinkedin] = useState('');
+const [github, setGithub] = useState('');
+const [discord, setDiscord] = useState('');
+const [twitter, setTwitter] = useState('');
+const [instagram, setInstagram] = useState('');
+const [facebook, setFacebook] = useState('');
+
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);
@@ -120,7 +127,18 @@ const Register = () => {
       setLoading(false);
     }
   };
+  const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
 
+  if (linkedin && !urlPattern.test(linkedin)) {
+    errors.linkedin = 'Enter a valid LinkedIn URL';
+    toast.error('Invalid LinkedIn URL');
+  }
+  if (github && !urlPattern.test(github)) {
+    errors.github = 'Enter a valid GitHub URL';
+    toast.error('Invalid GitHub URL');
+  }
+  // Do similarly for discord, twitter, etc.
+  
   return (
     <>
       <Navbar />
@@ -185,7 +203,49 @@ const Register = () => {
           <p>
             Already have an account? <Link to="/login">Login</Link>
           </p>
+          <input
+  type="url"
+  placeholder="LinkedIn Profile URL"
+  value={linkedin}
+  onChange={(e) => setLinkedin(e.target.value)}
+/>
+
+<input
+  type="url"
+  placeholder="GitHub Profile URL"
+  value={github}
+  onChange={(e) => setGithub(e.target.value)}
+/>
+
+<input
+  type="url"
+  placeholder="Discord Profile URL"
+  value={discord}
+  onChange={(e) => setDiscord(e.target.value)}
+/>
+
+<input
+  type="url"
+  placeholder="Twitter Profile URL"
+  value={twitter}
+  onChange={(e) => setTwitter(e.target.value)}
+/>
+
+<input
+  type="url"
+  placeholder="Instagram Profile URL"
+  value={instagram}
+  onChange={(e) => setInstagram(e.target.value)}
+/>
+
+<input
+  type="url"
+  placeholder="Facebook Profile URL"
+  value={facebook}
+  onChange={(e) => setFacebook(e.target.value)}
+/>
         </div>
+
 
         <ToastContainer
           position="top-right"

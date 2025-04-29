@@ -1,0 +1,138 @@
+
+  .course-grid {
+    padding: 2rem;
+    background: #f0fff4;
+   
+  }
+
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .course-card-home {
+    background: #f0fff4;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    width: 400px !important;
+    height: 300px !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  
+  .course-card-home:hover {
+    transform: translateY(-5px);
+  }
+  .title-course {
+    font-size: 2.2rem;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 40px 0;
+    color: #2c3e50;
+  }
+  
+  .course-icon {
+    font-size: 2.5rem;
+    color: #2f855a; /* Customize color */
+  }
+  /* Styling for the heading */
+.heading-2-instructify {
+  font-size: 2rem; /* Adjust size */
+  font-weight: bold; /* Bold text */
+  color: #2f855a; /* Green color */
+  display: flex; /* Flexbox to align icon and text */
+  align-items: center; /* Vertically center the icon */
+  gap: 10px; /* Space between icon and text */
+  margin-bottom: 100px !important;
+}
+
+/* Styling for the icon */
+.heading-2-instructify i {
+  color: #2f855a; /* Icon color */
+  font-size: 1.5rem; /* Icon size */
+}
+
+  .course-thumbnail-hero {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    left: 10px;
+    border-radius: 50%;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+  
+  .tag {
+    background: #48ee;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  
+  .course-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0.5rem 0;
+  }
+  
+  .info {
+    font-size: 14px;
+    color: #555;
+  }
+ 
+/* Navigation arrows */
+.my-course-slider .swiper-button-next,
+.my-course-slider .swiper-button-prev {
+  color: #333;
+  font-size: 15px;
+  font-weight: 800;
+}
+/* styles.css */
+.see-more-btn {
+  padding: 0.5rem 1.5rem; /* Adjust padding */
+  background-color: #2f855a; /* Blue background */
+  color: white; /* White text */
+  border-radius: 50%; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Pointer cursor on hover */
+  width: 0px !important;
+  height: 20px !important;
+
+}
+.btn-see-more
+{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+
+}
+.see-more-btn:hover {
+  background-color:#2f855a; /* Darker blue on hover */
+}
+
+/* Pagination dots */
+.my-course-slider .swiper-pagination-bullet {
+  background:#2f855a;
+}

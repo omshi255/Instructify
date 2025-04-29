@@ -1,0 +1,257 @@
+/*  */
+.course-review-wrapper {
+    background-color: #f0fff4;
+    padding: 40px 20px;
+
+  }
+  
+  .main-heading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  .submit-button-review
+  {
+    width: 130px;
+
+  }
+  .main-heading-reviews
+  {
+    font-size: 20px;
+    color: rgb(57, 174, 57);
+    text-align: center;
+  }
+  .content-grid {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   align-items: center;
+  }
+  
+  .video-container {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  
+  .form-container {
+    background-color: #fff;
+    padding: 25px;
+    width: 400px;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-heading {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+  }
+  
+  .form-label {
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 10px;
+    font-size: 0.95rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: #f4f7fc;
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus {
+    border-color: #6C63FF;
+    outline: none;
+  }
+  
+  .stars-container {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-start;
+  }
+  
+  .star {
+    font-size: 1.3em;
+    color: #ccc;
+    cursor: pointer;
+  }
+  
+  .star.filled,
+  .star:hover {
+    color: #FFD700;
+  }
+  
+  .submit-button {
+    background-color: #6C63FF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #5746D1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .content-grid {
+      grid-template-columns: 1fr;
+    }
+    .form-container,
+    .video-container {
+      height: auto;
+      max-width: 100%;
+    }
+    .submit-button-review {
+      background-color: rgb(44, 134, 44);
+      color: #fff;
+      border: none;
+      width: 80px !important;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  }
+  @media (max-width: 1024px) {
+    /* Content grid changes for smaller screens */
+    .content-grid {
+      flex-direction: column; /* Stacks the video and form vertically */
+      align-items: center; /* Centers the content */
+    }
+  
+    /* Adjust form container size */
+    .form-container {
+      width: 90%; /* Make it responsive */
+      height: auto;
+      padding: 15px;
+    }
+  
+    /* Adjust video container size */
+    .video-container {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    /* Adjust main heading size */
+    .main-heading {
+      font-size: 1.8rem;
+    }
+  
+    /* Adjust review heading size */
+    .main-heading-reviews {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* For screens max-width 768px */
+  @media (max-width: 768px) {
+    /* Content grid becomes single column */
+    .content-grid {
+      flex-direction: column;
+      gap: 30px; /* Spacing between elements */
+      align-items: center;
+    }
+  
+    /* Adjust form container and video container size */
+    .form-container,
+    .video-container {
+      width: 100%;
+      max-width: 100%;
+      height: auto; /* Auto height for responsiveness */
+      padding: 15px;
+    }
+  
+    /* Adjust submit button size */
+    .submit-button-review {
+      width: 100px;
+      font-size: 0.9rem;
+    }
+  
+    /* Review heading adjustments */
+    .review-heading {
+      font-size: 1.2rem;
+    }
+  
+    .stars-container {
+      justify-content: center; /* Center the stars */
+    }
+  }
+  
+  /* For screens max-width 480px */
+  @media (max-width: 480px) {
+    .course-review-wrapper {
+      padding: 20px 10px; /* Less padding on smaller screens */
+    }
+  
+    .main-heading {
+      font-size: 1.6rem;
+    }
+  
+    .form-container {
+      padding: 10px;
+      width: 100%;
+      height: auto; /* Auto height for smaller screens */
+    }
+  
+    .video-container {
+      width: 100%;
+      height: 250px; /* Reduce height on very small screens */
+    }
+  
+    .review-heading {
+      font-size: 1.1rem;
+    }
+  
+    /* Adjust the size of the stars */
+    .star {
+      font-size: 1.1em;
+    }
+  
+    .submit-button {
+      width: 100%;
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  
+    .submit-button-review {
+      width: 100%; /* Make the button full width on small screens */
+    }
+  }

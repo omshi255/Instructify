@@ -1,0 +1,220 @@
+/* Footer Styling */
+.footer {
+    background-color:rgb(11, 7, 41); /* Ark Accent color */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-radius: 0px ;
+  }
+  
+  .footer-content p {
+    font-size: 13px;
+    margin: 0;
+  }
+  
+  .heart {
+    color: red; /* Heart color */
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    color: white;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #f0f0f0; /* Light color on hover */
+  }
+  
+  .social-icon i {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover i {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+  }
+  /* Footer Styling */
+.footer {
+    background-color: #2f855a; /* Ark Accent color */
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .footer-content p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .heart {
+    color: red; /* Heart color */
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .social-links {
+    margin-top: 1rem;
+  }
+  
+  .social-icon {
+    color: white;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #2f855a; /* Light color on hover */
+  }
+  
+  .social-icon i {
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icon:hover i {
+    transform: scale(1.2); /* Slight zoom effect on hover */
+  }
+  
+  /* Email Contact Section Styling */
+  .email-contact {
+    margin-top: 2rem;
+  }
+  
+  .email-input {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .email-input:focus {
+    border: 2px solid #fff; /* White border on focus */
+    outline: none;
+  }
+  
+  .email-submit {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100px;
+  }
+  
+  .email-submit:hover {
+    background-color: #ff4500; /* Darker tomato color on hover */
+  }
+  /* For screens max-width 1024px (Tablets) */
+@media (max-width: 1024px) {
+    .footer-content p {
+      font-size: 1.1rem; /* Slightly smaller text */
+    }
+  
+    .social-icon {
+      font-size: 1.3rem; /* Slightly smaller icons */
+    }
+  
+    .email-input,
+    .email-submit {
+      width: 200px; /* Smaller input and submit button */
+    }
+  
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .email-contact {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+  
+  /* For screens max-width 768px (Mobile Devices) */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 1.5rem 0; /* Less padding on smaller screens */
+    }
+  
+    .footer-content p {
+      font-size: 14px; /* Adjust text size for readability */
+      margin-bottom: 20px;
+    }
+  
+    .social-icon {
+      font-size: 1.2rem; /* Smaller icons */
+      margin: 0 0.5rem; /* Less margin */
+    }
+  
+    .social-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+  
+    .email-contact {
+      flex-direction: column; /* Stack email input and submit button */
+      gap: 10px;
+      margin-top: 1rem;
+    }
+  
+    .email-input {
+      width: 80%; /* Make input wider on small screens */
+    }
+  
+    .email-submit {
+      width: 120px !important; 
+      margin-bottom: 50px;/* Make submit button wider */
+    }
+  }
+  
+  /* For screens max-width 480px (Small Mobile Devices) */
+  @media (max-width: 480px) {
+    .footer {
+      padding: 1rem 0; /* Less padding on very small screens */
+    }
+  
+    .footer-content p {
+      font-size: 0.9rem; /* Adjust text size */
+    }
+  
+    .social-icon {
+      font-size: 1.1rem; /* Smaller icons */
+      margin: 0 0.4rem; /* Even less margin */
+    }
+  
+    .email-contact {
+      flex-direction: column; /* Stack the email contact section */
+      gap: 10px;
+      margin-top: 1rem;
+      align-items: center;
+    }
+  
+    .email-input,
+    .email-submit {
+      width: 90%; /* Make input and button even larger on small screens */
+    }
+  
+    .email-submit {
+      font-size: 0.9rem; /* Slightly smaller submit button text */
+    }
+  }

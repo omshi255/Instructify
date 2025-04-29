@@ -31,6 +31,15 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: ''
   },
+  // 🌐 New Social & Portfolio Links
+  linkedin: { type: String, default: '' },
+  discord: { type: String, default: '' },
+  github: { type: String, default: '' },
+  twitter: { type: String, default: '' },
+  instagram: { type: String, default: '' },
+  facebook: { type: String, default: '' },
+  portfolio: { type: String, default: '' },
+
   // New field to store user's activity (e.g., YouTube link visits, time spent, etc.)
   activityLog: [{
     courseId: {

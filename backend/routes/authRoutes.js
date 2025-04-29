@@ -6,7 +6,7 @@ import { registerUser, loginUser,
        deleteUserProfile ,
        addLearningInterest 
        ,removeLearningInterest 
-       ,getLearningInterests} from '../controllers/usercontrollers.js';
+       ,getLearningInterests,getAllUsers} from '../controllers/usercontrollers.js';
 import { protect } from '../middleware/Authmiddleware.js'; // Import the protect middleware
 import { upload } from "../middleware/multerConfig.js";
 import { getUserProfile } from '../controllers/usercontrollers.js';
@@ -32,5 +32,5 @@ router.delete('/delete-profile', protect, deleteUserProfile); // This is the new
 router.post('/add-learning-interest', protect, addLearningInterest); // This is the new route for adding a learning interest
 router.delete('/delete-learning-interest', protect, removeLearningInterest); // This is the new route for deleting a learning interest
 router.get('/get-learning-interest', protect, getLearningInterests); // This is the new route for getting a user profile
-
+router.get('/all-users', getAllUsers);
 export default router;
