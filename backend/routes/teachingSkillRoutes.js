@@ -6,7 +6,7 @@ import {
   deleteTeachingSkill,
   deleteAllTeachingSkills
 } from '../controllers/teachingSkillController.js';
-import { protect } from '../middleware/authMiddleware.js';
+import { protect } from '../middleware/Authmiddleware.js';
 
 const router = express.Router();
 
