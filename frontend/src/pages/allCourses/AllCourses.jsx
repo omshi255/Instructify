@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
-import DashboardNavbar from "../DashboardNavbar.jsx";
+import Footer from "../../components/Footer.jsx"; // Adjust the import path as necessary
 
 const AllCourses = () => {
   const [courses, setCourses] = useState([]);
@@ -81,7 +81,7 @@ const AllCourses = () => {
 
   return (
     <>
-      <DashboardNavbar />
+      
       <div className="all-courses-container">
         <h1 className="all-courses-title">
           <FontAwesomeIcon icon={faBookmark} /> All Courses
@@ -133,6 +133,8 @@ const AllCourses = () => {
         )}
         <ToastContainer position="top-right" autoClose={2000} />
       </div>
+      <Footer/>
+
     </>
   );
 };

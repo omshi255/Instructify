@@ -7,7 +7,7 @@ import Navbar from "../pages/DashboardNavbar";
 import Recommendations from '../components/Recommendations.jsx';
 // import Footer from './Footer.jsx';
 import ReviewForm from "./ReviewForm.jsx";
-import Footer from "./Footer.jsx";
+import Footer from '../components/Footer.jsx' // Import the Footer component
 
 const HeroSection = () => {
   // Default options for the first Lottie animation

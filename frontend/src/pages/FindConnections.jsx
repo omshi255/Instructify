@@ -3,7 +3,7 @@ import axios from "axios";
 import { FaLinkedin, FaGithub, FaDiscord, FaInstagram, FaTwitter, FaFacebook, FaGlobe } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Use React Router for navigation
 import './FindConnections.css';
-
+import Footer from "../components/Footer.jsx"; // Adjust the import path as necessary
 const UsersList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,6 +28,7 @@ const UsersList = () => {
   if (error) return <div>{error}</div>;
 
   return (
+    <>
     <div className="users-list">
       <h2 className="register-user-heading"><i class="fas fa-users"></i>All Registered Users</h2>
       <div className="users-container">
@@ -107,7 +108,10 @@ const UsersList = () => {
           </div>
         ))}
       </div>
+    
     </div>
+      <Footer/>
+    </>
   );
 };
 

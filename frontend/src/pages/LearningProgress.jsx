@@ -1,8 +1,8 @@
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import "./LearningProgress.css";
-import DashboardNavbar from "../pages/DashboardNavbar.jsx";
 
+import Footer from "../components/Footer.jsx"; // Import the Footer component
 const ProgressPage = () => {
   // Dummy data for graph
   const hourlyData = [
@@ -34,7 +34,7 @@ const ProgressPage = () => {
 
   return (
     <>
-      <DashboardNavbar />
+   
       <div className="progress-page-container">
         <p className="graph-subtext">
           This graph represents the learning progress on a day-by-day basis. The data shows the total number of videos watched throughout the day, providing an overview of how students engage with learning content at different hours.
@@ -59,6 +59,7 @@ const ProgressPage = () => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <Footer/>
       </div>
     </>
   );

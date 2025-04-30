@@ -164,7 +164,13 @@ const getUserProfile = async (req, res) => {
 
 // Update User Profile
 const updateUserProfile = async (req, res) => {
-  const { name, bio, description, profilePic } = req.body;
+  const { name, bio, description, profilePic,linkedin,
+    discord,
+    github,
+    twitter,
+    instagram,
+    facebook,
+    portfolio,  } = req.body;
 
   try {
     const user = await User.findById(req.user.id);
@@ -201,6 +207,14 @@ const updateUserProfile = async (req, res) => {
     if (name !== undefined) user.name = name;
     if (bio !== undefined) user.bio = bio;
     if (description !== undefined) user.description = description;
+    if( linkedin !== undefined) user.linkedin = linkedin;
+    if( discord !== undefined) user.discord = discord;
+    if( github !== undefined) user.github = github;
+    if( twitter !== undefined) user.twitter = twitter;
+    if( instagram !== undefined) user.instagram = instagram;
+    if( facebook !== undefined) user.facebook = facebook;
+    if( portfolio !== undefined) user.portfolio = portfolio;
+    
 
     await user.save();
 
@@ -213,6 +227,13 @@ const updateUserProfile = async (req, res) => {
         bio: user.bio,
         description: user.description,
         profilePic: user.profilePic,
+        linkedin: user.linkedin,
+        discord: user.discord,
+        github: user.github,
+        twitter: user.twitter,
+        instagram: user.instagram,
+        facebook: user.facebook,
+        portfolio: user.portfolio,
       },
     });
   } catch (err) {

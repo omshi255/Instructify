@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
-import { FaTrash, FaPlus, FaEdit, FaSpinner, FaAddressCard } from 'react-icons/fa';
+import { FaTrash, FaPlus, FaSpinner, FaAddressCard } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './TeachingSkills.css';
-import DashboardNavbar from '../pages/DashboardNavbar.jsx';
+
 import Lottie from "lottie-react";
 import learningAnimation from "../animations/Animation - 1745587232807.json";
-
+import Footer from '../components/Footer.jsx'; // Adjust the import path as necessary
 const SkillsDashboard = () => {
   const [skills, setSkills] = useState([]);
   const [newSkill, setNewSkill] = useState('');
@@ -58,15 +58,7 @@ const SkillsDashboard = () => {
     }
   };
 
-  const updateSkills = async () => {
-    try {
-      await axios.put('http://localhost:5000/api/teachingskills', { skills }, getConfig());
-      toast.success('Skills updated successfully');
-    } catch (error) {
-      console.error('Update error:', error);
-      toast.error('Failed to update skills');
-    }
-  };
+  
 
   const deleteSkill = async (skill) => {
     try {
@@ -92,7 +84,7 @@ const SkillsDashboard = () => {
 
   return (
     <>
-      <DashboardNavbar />
+     
       <div className="dashboard">
         <div className="dashboard-container-two-column">
           {/* Left side: Animation */}
@@ -145,9 +137,7 @@ const SkillsDashboard = () => {
             )}
 
             <div className="actions">
-              <button type="button" onClick={updateSkills} className="update-btn">
-                <FaEdit /> Update Skills
-              </button>
+            
 
               <button type="button" onClick={deleteAllSkills} className="delete-all-btn">
                 <FaTrash /> Delete All
@@ -170,6 +160,7 @@ const SkillsDashboard = () => {
         pauseOnHover
         theme="colored"
       />
+      <Footer/>
     </>
   );
 };

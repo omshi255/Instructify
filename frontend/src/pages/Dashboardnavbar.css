@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
 /* Base */
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-}
+} */
 
 /* 🌿 Navbar */
 .navbar {
@@ -310,7 +310,10 @@ body {
   .search-input {
     width: 100px;
   }
-
+.logout-btn
+{
+  width: 100px !important;
+}
   .search-input:focus {
     width: 180px;
   }

@@ -1,0 +1,324 @@
+/* Main profile container */
+.user-profile-card {
+    width: 100%;
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+  
+    border-radius: 12px;
+   
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  
+  /* Profile section header */
+  .profile-section-heading {
+    font-size: 26px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .profile-section-heading i {
+    margin-right: 15px;
+    color: #4caf50;
+  }
+  
+  /* Profile picture container */
+  .profile-header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-picture {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #4caf50;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+
+  .profile-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d3e50;
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+  
+  /* Profile details */
+  .profile-detail {
+    font-size: 16px;
+    color: #555;
+    margin: 15px 0;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  .detail-heading {
+    font-weight: 600;
+    color: #333;
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+  
+  /* Learning interests section */
+  .learning-interests-list {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+  }
+  
+  .learning-interests-list ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .learning-interests-list li {
+    font-size: 16px;
+    margin: 8px 0;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .learning-interests-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+    font-size: 18px;
+  }
+  
+  /* Action buttons */
+  .profile-action-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .button {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+  }
+  
+  .button i {
+    margin-right: 8px;
+  }
+  
+  /* Edit profile button */
+  .edit-profile-btn {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #45a049;
+    box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+  }
+  
+  .edit-profile-btn:focus {
+    outline: none;
+    border: 2px solid #4caf50;
+  }
+  
+  /* Delete profile button */
+  .delete-profile-btn {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 4px 8px rgba(244, 67, 54, 0.2);
+  }
+  
+  .delete-profile-btn:hover {
+    background-color: #e53935;
+    box-shadow: 0 6px 12px rgba(244, 67, 54, 0.3);
+  }
+  
+  .delete-profile-btn:focus {
+    outline: none;
+    border: 2px solid #f44336;
+  }
+  /* ========== Responsive ========== */
+@media screen and (max-width: 900px) {
+  .user-profile-card {
+    padding: 20px;
+  }
+
+  .profile-section-heading {
+    font-size: 22px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-detail,
+  .learning-interests-list {
+    font-size: 15px;
+  }
+
+  .button {
+    font-size: 15px;
+    padding: 10px 15px;
+    min-width: 140px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .profile-detail,
+  .learning-interests-list {
+    font-size: 14px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 8px 12px;
+    min-width: 120px;
+  }
+
+  .profile-section-heading {
+    font-size: 20px;
+  }
+
+  .learning-interests-list li {
+    padding-left: 16px;
+  }
+
+  .learning-interests-list li::before {
+    font-size: 16px;
+  }
+}
+/* Social Icons Container */
+.social-icons {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Icon Link */
+.social-icons a {
+  font-size: 24px;
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Common hover effect */
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Specific hover colors for each platform */
+.social-icons a.fa-linkedin:hover {
+  color: #0077b5;
+}
+
+.social-icons a.fa-discord:hover {
+  color: #5865F2;
+}
+
+.social-icons a.fa-github:hover {
+  color: #000 ;
+}
+
+.social-icons a.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+.social-icons a.fa-instagram:hover {
+  color: #e4405f;
+}
+
+.social-icons a.fa-facebook:hover {
+  color: #1877f2;
+}
+
+.social-icons a.fa-globe:hover {
+  color: #4caf50;
+}
+
+/* Responsive tweak for smaller screens */
+@media screen and (max-width: 480px) {
+  .social-icons a {
+    font-size: 20px;
+  }
+  /* Individual Icon Link */
+.social-icons a {
+  font-size: 24px;
+  color: #555;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Common hover effect */
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Specific hover colors for each platform */
+.social-icons a.fa-linkedin:hover {
+  color: #0077b5;
+}
+
+.social-icons a.fa-discord:hover {
+  color: #5865F2;
+}
+
+.social-icons a.fa-github:hover {
+  color: #000 ;
+}
+
+.social-icons a.fa-twitter:hover {
+  color: #1da1f2;
+}
+
+.social-icons a.fa-instagram:hover {
+  color: #e4405f;
+}
+
+.social-icons a.fa-facebook:hover {
+  color: #1877f2;
+}
+
+.social-icons a.fa-globe:hover {
+  color: #4caf50;
+}
+}

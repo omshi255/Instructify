@@ -7,9 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import DashboardNavbar from "../pages/DashboardNavbar.jsx";
-import { useNavigate } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer.jsx";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
 const MyCourses = () => {
@@ -173,7 +173,7 @@ const MyCourses = () => {
   return (
     <>
 
-      <DashboardNavbar />
+      {/* <DashboardNavbar /> */}
       <h3 className="dashboard-heading">
         Hii    {username ? username : 'User'}!
         <span className="emoji">👋</span>
@@ -324,13 +324,13 @@ const MyCourses = () => {
                     )}
                   </ul>
                 </div>
-                <div className="profile-actions">
+                {/* <div className="profile-actions">
                   <button className="btn update-btn" onClick={() => navigate('/dashboard/update-profile')}> <i className="fas fa-edit"></i>Edit Profile</button>
                   <button className="btn delete-btn" onClick={handleDeleteProfile}>
   <i className="fas fa-trash-alt"></i>Delete Profile
 </button>
 
-                </div>
+                </div> */}
               </div>
             )}
 
@@ -351,41 +351,43 @@ const MyCourses = () => {
                 </div>
               </div>
             )}
-
+{/* bookmarked courses section */}
 {link.label === "Bookmarked Courses" && (
-              <div className="courses-section-inside">
-                <h3 className="course-heading-detail"> <i class="fas fa-laptop"></i>
-                My bookmarked Courses</h3>
-                {loadingCourses ? (
-                  <p>Loading Courses...</p>
-                ) : bookmarkedCourses.length === 0 ? (
-                  <p>No courses available.</p>
-                ) : (
-                  <ul className="courses-list">
-                    {bookmarkedCourses.map((course) => (
-                      <li key={course._id} className="course-card">
-                        <div className="course-header">
-                          {course.thumbnail && (
-                            <img
-                              src={course.thumbnail}
-                              alt={course.title}
-                              className="course-thumbnail"
-                            />
-                          )}
-                          <div className="course-details">
-                            <h3 className="course-title">{course.title}</h3>
-                            <p className="course-description">{course.description}</p>
-                            <p className="course-price"><strong>₹{course.price || "Free"}</strong></p>
-                            <p className="course-category"><em>{course.category}</em></p>
-                          </div>
-                          
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+  <div className="bookmarked-section">
+    <h3 className="bookmarked-heading">
+      <i className="fas fa-bookmark"></i> My Bookmarked Courses
+    </h3>
+
+    {loadingCourses ? (
+      <p>Loading Courses...</p>
+    ) : bookmarkedCourses.length === 0 ? (
+      <p>No courses available.</p>
+    ) : (
+      <ul className="bookmarked-list">
+        {bookmarkedCourses.map((course) => (
+          <li key={course._id} className="bookmarked-item">
+            {course.thumbnail && (
+              <img
+                src={course.thumbnail}
+                alt={course.title}
+                className="bookmarked-thumbnail"
+              />
             )}
+            <div className="bookmarked-info">
+              <h4 className="bookmarked-title">{course.title}</h4>
+              <p className="bookmarked-description">{course.description}</p>
+              <div className="bookmarked-meta">
+                <span className="bookmarked-price">₹{course.price || "Free"}</span>
+                <span className="bookmarked-category">{course.category}</span>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+)}
+
           </div>
         ))}
       
@@ -394,6 +396,7 @@ const MyCourses = () => {
       </div>
    
       <ToastContainer position="top-right" autoClose={2000} />
+      <Footer />
     </>
   );
 };

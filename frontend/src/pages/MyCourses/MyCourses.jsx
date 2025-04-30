@@ -5,6 +5,8 @@ import "./MyCourses.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Footer from "../../components/Footer.jsx";
+
 import {
   faPenToSquare,
   faTrash,
@@ -15,7 +17,7 @@ import {
   faVideo,
   faImage,
 } from "@fortawesome/free-solid-svg-icons";
-import DashboardNavbar from "../DashboardNavbar.jsx";
+
 
 
 
@@ -33,7 +35,7 @@ const MyCourses = () => {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCourses(res.data.courses);
-      toast.success("Courses loaded!");
+      // toast.success("Courses loaded!");
     } catch (err) {
       console.error(err);
       toast.error("Failed to fetch courses");
@@ -64,7 +66,7 @@ const MyCourses = () => {
 
   return (
    <>
-    <DashboardNavbar/>
+   
     <div className="my-courses-container">
       <div className="left-section">
       
@@ -193,7 +195,7 @@ const MyCourses = () => {
 
       <ToastContainer position="top-right" autoClose={2000} />
     </div>
-   
+    <Footer/>
    </>
   );
 };

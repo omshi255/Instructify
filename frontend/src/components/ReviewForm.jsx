@@ -8,11 +8,13 @@ const ReviewForm = () => {
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState('');
 
+  // Handle rating click
   const handleRatingClick = (index) => {
     setRating(index + 1);
   };
 
-  const submitReview = (e) => {
+  // Submit review to backend
+  const submitReview = async (e) => {
     e.preventDefault();
 
     if (!name || !rating || !review) {
@@ -20,15 +22,41 @@ const ReviewForm = () => {
       return;
     }
 
-    // ✅ Success Toast
-    toast.success('Review submitted successfully!');
+    // Collect review data
+    const reviewData = {
+      name,
+      rating,
+      review,
+    };
 
-    // Reset form fields
-    setName('');
-    setRating(null);
-    setReview('');
+    try {
+      // Send review data to the backend
+      const response = await fetch('http://localhost:5000/api/review/submit-review', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`, // JWT token for authentication
+        },
+        body: JSON.stringify(reviewData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success(data.message || 'Review submitted successfully!');
+        // Reset form fields
+        setName('');
+        setRating(null);
+        setReview('');
+      } else {
+        toast.error(data.error || 'Failed to submit review');
+      }
+    } catch (error) {
+      toast.error('An error occurred while submitting the review');
+    }
   };
 
+  // Render stars based on rating
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < 5; i++) {

@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "./CourseForm.css"; // for styling
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faPenToSquare ,faCirclePlus, faTrashAlt ,faCheckCircle, faPaperPlane ,faChalkboard} from "@fortawesome/free-solid-svg-icons";
+import '../../components/Footer.css';
 
 
 
@@ -220,8 +221,9 @@ const CourseForm = ({ fetchCourses, editCourse, setEditCourse }) => {
   />
   {editCourse ? "Update Course" : "Create Course"}
 </button>
-
+ 
     </div>
+    
   );
 };
 

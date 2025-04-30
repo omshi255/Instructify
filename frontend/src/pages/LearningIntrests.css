@@ -116,3 +116,67 @@ body
     margin-top: 20px;
   }
   
+/* Mobile: 0 - 600px */
+@media screen and (max-width: 600px) {
+  .learning-container {
+    padding: 20px;
+    margin: 50px 10px;
+  }
+  
+  .learning-title {
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .interest-form {
+    flex-direction: column;
+  }
+  
+  .interest-input {
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    font-size: 15px;
+  }
+  
+  .add-interest-btn {
+    width: 100px;
+  }
+  
+  .interest-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .delete-btn-dis {
+    width: 80px;
+  
+    
+  }
+}
+
+/* Tablet: 601px - 900px */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .learning-container {
+    padding: 25px;
+    margin: 60px auto;
+    max-width: 90%;
+  }
+
+  .interest-form {
+    flex-wrap: wrap;
+  }
+
+  .interest-input {
+    min-width: 250px;
+  }
+
+  .interest-item {
+    flex-direction: row;
+    gap: 10px;
+  }
+}

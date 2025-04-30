@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import './UserCourses.css';
-
+import Footer from '../../components/Footer.jsx'; // Adjust the import path as necessary
 const CourseList = () => {
   const { userId } = useParams();
   const [courses, setCourses] = useState([]);
@@ -66,7 +66,9 @@ const CourseList = () => {
       ) : (
         <p className="no-courses">No courses found</p>
       )}
+        <Footer/>
     </div>
+
   );
 };
 

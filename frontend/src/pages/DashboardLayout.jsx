@@ -2,9 +2,10 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import {
   FaBrain, FaBookOpen, FaBullseye, FaChartLine, FaPlayCircle,
-  FaBookmark, FaStar, FaMedal, FaCog
+  FaBookmark, FaStar, FaCog
 } from 'react-icons/fa';
 import './DashboardLayout.css';
+import DashboardNavbar from "../pages/DashboardNavbar.jsx";
 
 const dashboardLinks = [
   { to: "/dashboard/teaching-skills", icon: <FaBrain />, label: "Teaching Skills" },
@@ -14,12 +15,12 @@ const dashboardLinks = [
   { to: "/dashboard/connections", icon: <FaPlayCircle />, label: "Find Connections" },
   { to: "/dashboard/bookmarked", icon: <FaBookmark />, label: "Bookmarked Courses" },
   { to: "/dashboard/reviews", icon: <FaStar />, label: "My Reviews" },
-  { to: "/dashboard/power-score", icon: <FaMedal />, label: "Power Score" },
   { to: "/dashboard/settings", icon: <FaCog />, label: "Settings" },
 ];
 
 const DashboardLayout = () => {
-  return (
+  return (<>
+        <DashboardNavbar />
     <div className="dashboard-layout">
       {/* Sidebar */}
       <aside className="dashboard-sidebar">
@@ -41,7 +42,7 @@ const DashboardLayout = () => {
         <Outlet />
       </main>
     </div>
-  );
+    </>);
 };
 
 export default DashboardLayout;

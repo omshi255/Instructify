@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import ProgressBar from "../pages/LearningProgress.jsx"; // path accordingly
-
+import '../components/Footer.css'
 const CoursePage = () => {
   const { courseId } = useParams();
 

@@ -33,13 +33,22 @@
     color: #666;
   }
   
-  .course-list {
+  /* .course-list {
     display: flex;
     gap: 30px;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+  } */
+
+  .course-list {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: center;
+    align-items: stretch;
   }
   
   .course-item {
@@ -144,23 +153,89 @@
   }
   
   /* Responsiveness */
-  @media (max-width: 768px) {
-    .course-list {
-      flex-direction: column;
-      align-items: center;
-    }
-    .bookmark-btn 
-    {
-        width: 20px;
-        height: 20px;
-    }
-    .course-item {
-      width: 100%;
-      max-width: 350px;
+  
+  
+  @media screen and (max-width: 600px) {
+    .all-courses-title {
+      font-size: 1.5rem;
+      text-align: center;
     }
   
-    .actions {
-      justify-content: flex-end;
+    .course-item {
+      width: 100%;
+      padding: 16px;
     }
-    
+  
+    .course-thumb {
+      height: 160px;
+    }
+  
+    .bookmark-btn {
+      width: 20px !important;
+      height: 20px !important;
+      font-size: 13px;
+    }
+  
+    .course-item h3 {
+      font-size: 1.25rem;
+    }
+  
+    .course-item p {
+      font-size: 0.95rem;
+    }
   }
+  
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    .course-item {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .course-thumb {
+      height: 170px;
+    }
+  
+    .course-item h3 {
+      font-size: 1.4rem;
+    }
+  
+    .course-item p {
+      font-size: 1rem;
+    }
+  
+    .bookmark-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (min-width: 901px) {
+    .course-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .course-item {
+      width: 100%;
+      padding: 24px;
+    }
+  
+    .course-thumb {
+      height: 180px;
+    }
+  
+    .course-item h3 {
+      font-size: 1.5rem;
+    }
+  
+    .course-item p {
+      font-size: 1rem;
+    }
+  
+    .bookmark-btn {
+      width: 30px;
+      height: 30px;
+      font-size: 15px;
+    }
+  }
+  

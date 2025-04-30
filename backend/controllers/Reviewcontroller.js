@@ -1,6 +1,6 @@
 import Review from '../models/Review.js';
 
-// Submit Review
+
 export const submitReview = async (req, res) => {
   const { rating, review, name } = req.body;
   const userId = req.user._id; // Assuming req.user contains the authenticated user's info
@@ -16,9 +16,11 @@ export const submitReview = async (req, res) => {
     await newReview.save();
     res.status(200).json({ message: 'Review submitted successfully!' });
   } catch (error) {
+    console.error(error); // Log the error for debugging
     res.status(500).json({ error: 'Failed to submit review' });
   }
 };
+
 
 // Delete Review
 export const deleteReview = async (req, res) => {
@@ -40,5 +42,13 @@ export const deleteReview = async (req, res) => {
     res.status(200).json({ message: 'Review deleted successfully' });
   } catch (error) {
     res.status(500).json({ error: 'Failed to delete review' });
+  }
+};
+export const getAllReviews = async (req, res) => {
+  try {
+    const reviews = await Review.find().sort({ date: -1 });
+    res.json(reviews);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch reviews' });
   }
 };

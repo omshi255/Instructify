@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../pages/Dashboardnavbar.css"
+import "../pages/Dashboardnavbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -66,77 +66,78 @@ const Navbar = () => {
             </a>
             {dropdownOpen && (
               <ul className="dropdown-content">
+                {/* Dropdown links, all pointing to /dashboard/bookmarked */}
                 <li>
-                  <a href="#service1">App Development</a>
+                  <Link to="/dashboard/bookmarked">App Development</Link>
                 </li>
                 <li>
-                  <a href="#service2">Web Development</a>
+                  <Link to="/dashboard/bookmarked">Web Development</Link>
                 </li>
                 <li>
-                  <a href="#service3">AI & Machine Learning</a>
+                  <Link to="/dashboard/bookmarked">AI & Machine Learning</Link>
                 </li>
                 <li>
-                  <a href="#service4">Data Science</a>
+                  <Link to="/dashboard/bookmarked">Data Science</Link>
                 </li>
                 <li>
-                  <a href="#service5">Cloud Computing</a>
+                  <Link to="/dashboard/bookmarked">Cloud Computing</Link>
                 </li>
                 <li>
-                  <a href="#service6">Cybersecurity</a>
+                  <Link to="/dashboard/bookmarked">Cybersecurity</Link>
                 </li>
                 <li>
-                  <a href="#service7">Blockchain Development</a>
+                  <Link to="/dashboard/bookmarked">Blockchain Development</Link>
                 </li>
                 <li>
-                  <a href="#service8">Game Development</a>
+                  <Link to="/dashboard/bookmarked">Game Development</Link>
                 </li>
                 <li>
-                  <a href="#service9">Database Management</a>
+                  <Link to="/dashboard/bookmarked">Database Management</Link>
                 </li>
                 <li>
-                  <a href="#service10">DevOps</a>
+                  <Link to="/dashboard/bookmarked">DevOps</Link>
                 </li>
                 <li>
-                  <a href="#service11">IoT (Internet of Things)</a>
+                  <Link to="/dashboard/bookmarked">IoT (Internet of Things)</Link>
                 </li>
                 <li>
-                  <a href="#service12">Augmented Reality (AR)</a>
+                  <Link to="/dashboard/bookmarked">Augmented Reality (AR)</Link>
                 </li>
                 <li>
-                  <a href="#service13">Virtual Reality (VR)</a>
+                  <Link to="/dashboard/bookmarked">Virtual Reality (VR)</Link>
                 </li>
                 <li>
-                  <a href="#service14">Flutter Development</a>
+                  <Link to="/dashboard/bookmarked">Flutter Development</Link>
                 </li>
                 <li>
-                  <a href="#service15">React.js Development</a>
+                  <Link to="/dashboard/bookmarked">React.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service16">Node.js Development</a>
+                  <Link to="/dashboard/bookmarked">Node.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service17">Vue.js Development</a>
+                  <Link to="/dashboard/bookmarked">Vue.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service18">Python Development</a>
+                  <Link to="/dashboard/bookmarked">Python Development</Link>
                 </li>
                 <li>
-                  <a href="#service19">C++ Programming</a>
+                  <Link to="/dashboard/bookmarked">C++ Programming</Link>
                 </li>
                 <li>
-                  <a href="#service20">Java Development</a>
+                  <Link to="/dashboard/bookmarked">Java Development</Link>
                 </li>
                 <li>
-                  <a href="#service21">Kotlin Development</a>
+                  <Link to="/dashboard/bookmarked">Kotlin Development</Link>
                 </li>
                 <li>
-                  <a href="#service22">Swift Development</a>
+                  <Link to="/dashboard/bookmarked">Swift Development</Link>
                 </li>
                 <li>
-                  <a href="#service23">PHP Development</a>
+                  <Link to="/dashboard/bookmarked">PHP Development</Link>
                 </li>
                 <li>
-                  <a href="#service24">Ruby on Rails</a>
+                  <Link to="/dashboard/bookmarked">Ruby on Rails</Link>
                 </li>
               </ul>
             )}
@@ -155,7 +156,6 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              {/* <span className="user-email">{user.email}</span> */}
               <img src={user.profilePic} alt="Profile" className="profile-pic" style={{ width: "40px", height: "40px", borderRadius: "50%" }} />
               <button onClick={handleLogout} className="btn logout-btn">Logout</button>
             </>
@@ -171,7 +171,7 @@ const Navbar = () => {
 
       <div className={`mobile-menu ${isOpen ? "show" : ""}`}>
         <ul>
-          <li><a href="#home" onClick={toggleMenu}>Explore</a></li>
+          <li><a href="/" onClick={toggleMenu}>Explore</a></li>
           <li>
             <a href="#services" onClick={toggleDropdown}>
               Categories <i className={`fas fa-caret-${dropdownOpen ? "up" : "down"}`} />
@@ -179,76 +179,76 @@ const Navbar = () => {
             {dropdownOpen && (
               <ul className="mobile-dropdown-menu">
                 <li>
-                  <a href="#service1">App Development</a>
+                  <Link to="/dashboard/bookmarked">App Development</Link>
                 </li>
                 <li>
-                  <a href="#service2">Web Development</a>
+                  <Link to="/dashboard/bookmarked">Web Development</Link>
                 </li>
                 <li>
-                  <a href="#service3">AI & Machine Learning</a>
+                  <Link to="/dashboard/bookmarked">AI & Machine Learning</Link>
                 </li>
                 <li>
-                  <a href="#service4">Data Science</a>
+                  <Link to="/dashboard/bookmarked">Data Science</Link>
                 </li>
                 <li>
-                  <a href="#service5">Cloud Computing</a>
+                  <Link to="/dashboard/bookmarked">Cloud Computing</Link>
                 </li>
                 <li>
-                  <a href="#service6">Cybersecurity</a>
+                  <Link to="/dashboard/bookmarked">Cybersecurity</Link>
                 </li>
                 <li>
-                  <a href="#service7">Blockchain Development</a>
+                  <Link to="/dashboard/bookmarked">Blockchain Development</Link>
                 </li>
                 <li>
-                  <a href="#service8">Game Development</a>
+                  <Link to="/dashboard/bookmarked">Game Development</Link>
                 </li>
                 <li>
-                  <a href="#service9">Database Management</a>
+                  <Link to="/dashboard/bookmarked">Database Management</Link>
                 </li>
                 <li>
-                  <a href="#service10">DevOps</a>
+                  <Link to="/dashboard/bookmarked">DevOps</Link>
                 </li>
                 <li>
-                  <a href="#service11">IoT (Internet of Things)</a>
+                  <Link to="/dashboard/bookmarked">IoT (Internet of Things)</Link>
                 </li>
                 <li>
-                  <a href="#service12">Augmented Reality (AR)</a>
+                  <Link to="/dashboard/bookmarked">Augmented Reality (AR)</Link>
                 </li>
                 <li>
-                  <a href="#service13">Virtual Reality (VR)</a>
+                  <Link to="/dashboard/bookmarked">Virtual Reality (VR)</Link>
                 </li>
                 <li>
-                  <a href="#service14">Flutter Development</a>
+                  <Link to="/dashboard/bookmarked">Flutter Development</Link>
                 </li>
                 <li>
-                  <a href="#service15">React.js Development</a>
+                  <Link to="/dashboard/bookmarked">React.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service16">Node.js Development</a>
+                  <Link to="/dashboard/bookmarked">Node.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service17">Vue.js Development</a>
+                  <Link to="/dashboard/bookmarked">Vue.js Development</Link>
                 </li>
                 <li>
-                  <a href="#service18">Python Development</a>
+                  <Link to="/dashboard/bookmarked">Python Development</Link>
                 </li>
                 <li>
-                  <a href="#service19">C++ Programming</a>
+                  <Link to="/dashboard/bookmarked">C++ Programming</Link>
                 </li>
                 <li>
-                  <a href="#service20">Java Development</a>
+                  <Link to="/dashboard/bookmarked">Java Development</Link>
                 </li>
                 <li>
-                  <a href="#service21">Kotlin Development</a>
+                  <Link to="/dashboard/bookmarked">Kotlin Development</Link>
                 </li>
                 <li>
-                  <a href="#service22">Swift Development</a>
+                  <Link to="/dashboard/bookmarked">Swift Development</Link>
                 </li>
                 <li>
-                  <a href="#service23">PHP Development</a>
+                  <Link to="/dashboard/bookmarked">PHP Development</Link>
                 </li>
                 <li>
-                  <a href="#service24">Ruby on Rails</a>
+                  <Link to="/dashboard/bookmarked">Ruby on Rails</Link>
                 </li>
               </ul>
             )}
@@ -257,13 +257,20 @@ const Navbar = () => {
             <input type="text" placeholder="Search..." className="search-input" />
             <i className="fas fa-search search-icon"></i>
           </li>
-          {user && (
+          <div className="navbar-actions">
+          {!user ? (
             <>
-              <img src={user.profilePic} alt="profile" className="profile-pic" />
-              {/* <span className="user-email">{user.email}</span> */}
-              <button onClick={handleLogout} className="logout-btn">Logout</button>
+              <Link to="/login" className="btn login-btn">Login</Link>
+              <Link to="/register" className="btn signup-btn">Sign Up</Link>
+            </>
+          ) : (
+            <>
+              <img src={user.profilePic} alt="Profile" className="profile-pic" style={{ width: "40px", height: "40px", borderRadius: "50%" }} />
+              <button onClick={handleLogout} className="btn logout-btn">Logout</button>
             </>
           )}
+        </div>
+          
         </ul>
       </div>
     </nav>

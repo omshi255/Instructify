@@ -178,8 +178,8 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "./LearningIntrests.css";
-import DashboardNavbar from "../pages/DashboardNavbar";
 
+import Footer from "../components/Footer";
 const LearningInterests = () => {
   const [interests, setInterests] = useState([]);
   const [newInterest, setNewInterest] = useState("");
@@ -262,7 +262,7 @@ const LearningInterests = () => {
 
   return (
    <>
-    <DashboardNavbar/>
+  
     <div className="learning-container">
       <h2 className="learning-title">Learning Interests</h2>
 
@@ -309,7 +309,7 @@ const LearningInterests = () => {
         )}
       </div>
     </div>
-   
+   <Footer/>
    </>
   );
 };

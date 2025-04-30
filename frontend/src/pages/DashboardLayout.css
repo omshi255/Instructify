@@ -1,68 +1,8 @@
-/* .dashboard-page {
-  padding: 0px 40px 40px 40px; /* Top padding 0 
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9fafb;
-  min-height: 100vh;
-}
-
-.dashboard-title {
-  font-size: 2rem;
-  color: #38a169;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.dashboard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin-bottom: 40px;
-}
-
-.dashboard-card {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 24px;
-  text-align: center;
-  color: #374151;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-.dashboard-card:hover {
-  background-color: #f0fdf4;
-  border-color: #bbf7d0;
-  color: #15803d;
-}
-
-.dashboard-content {
-  background-color: #ffffff;
-  padding: 32px;
-  border-radius: 12px;
-  border: 1px solid #e5e7eb;
-}
-
-/* Responsive 
-@media (max-width: 768px) {
-  .dashboard-page {
-    padding: 20px;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-content {
-    padding: 20px;
-  }
-} */
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
   background-color: #f9fafb;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Sidebar */
@@ -78,7 +18,7 @@
   gap: 20px;
   position: fixed;
   left: 0px;
-  top: 0px;
+  top: 60px;
   height: calc(100vh - 100px);
   bottom: 0;
   z-index: 1000;
@@ -95,7 +35,6 @@
 .dashboard-link {
   width: 100%;
   color: #138049;
- 
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -103,7 +42,7 @@
   padding: 10px 20px;
   transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 /* Only icon visible initially */
@@ -134,7 +73,6 @@
 .dashboard-main {
   flex: 1;
   margin-left: 80px;
-  /* padding: 40px; */
   transition: margin-left 0.3s;
 }
 
@@ -143,12 +81,121 @@
   margin-left: 220px;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
+/* Responsive */
+
+/* For 600px and Below (Mobile) */
+@media screen and (max-width: 600px) {
   .dashboard-layout {
     flex-direction: column;
   }
 
+  .dashboard-sidebar {
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px;
+    top: 91%;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    position: fixed;
+    overflow-x: auto;
+    gap: 5px;
+    overflow: auto;
+  }
+
+  .dashboard-sidebar:hover {
+    width: 100%;
+  }
+
+  .dashboard-link {
+    flex-direction: column;
+    gap: 0px;
+    padding:0 18px;
+    width: auto;
+    min-width: 60px;
+    text-align: center;
+  }
+
+  .dashboard-link .label {
+    opacity: 1;
+    font-size: 12px;
+    text-wrap: initial;
+  }
+
+  .dashboard-sidebar:hover .dashboard-link .label {
+    opacity: 1;
+  }
+
+  .dashboard-link .icon {
+    font-size: 20px;
+  }
+
+  .dashboard-main {
+    margin-left: 0;
+    /* margin-top: 100px; */
+    padding: 0px;
+  }
+
+  .dashboard-sidebar:hover ~ .dashboard-main {
+    margin-left: 0;
+  }
+}
+
+/* For 900px to 600px (Tablet) */
+@media screen and (max-width: 900px) and (min-width: 600px) {
+  .dashboard-layout {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .dashboard-sidebar {
+    /* top: -60px; */
+    width: 60px;
+    padding: 15px 0;
+    gap: 15px;
+    justify-content: start;
+     }
+
+  .dashboard-sidebar:hover {
+    width: 180px;
+  }
+
+  .dashboard-link {
+    padding: 8px 15px;
+    gap: 12px;
+  }
+
+  .dashboard-link .label {
+    opacity: 0;
+    font-size: 14px;
+  }
+
+  .dashboard-sidebar:hover .dashboard-link .label {
+    opacity: 1;
+  }
+
+  .dashboard-link .icon {
+    font-size: 22px;
+  }
+
+  .dashboard-main {
+    margin-left: 0px;
+    /* padding: 30px; */
+  }
+
+  .dashboard-sidebar:hover ~ .dashboard-main {
+    margin-left: 180px;
+  }
+}
+
+/* Existing Responsive Styles */
+/* @media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+  
   .dashboard-sidebar {
     width: 100%;
     height: auto;
@@ -158,44 +205,12 @@
     border-bottom: 1px solid #e5e7eb;
   }
 
-  .dashboard-sidebar.open {
-    display: flex;
+  .dashboard-sidebar:hover {
+    width: 100%;
   }
 
   .dashboard-main {
     margin-left: 0;
     margin-top: 80px;
   }
-
-  /* Show the hamburger icon */
-  .hamburger {
-    display: flex;
-  }
-  
-  /* When the sidebar is open, adjust the margin for the main content */
-  .dashboard-sidebar.open ~ .dashboard-main {
-    margin-left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .dashboard-sidebar {
-    width: 0; /* Hide sidebar by default */
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    z-index: 1000;
-    transition: width 0.3s ease-in-out;
-  }
-
-  .dashboard-sidebar.open {
-    width: 220px; /* Show sidebar when open */
-  }
-
-  /* Ensure the content has space when sidebar is open */
-  .dashboard-main {
-    margin-left: 0;
-    padding-top: 80px;
-  }
-}
+} */

@@ -148,7 +148,7 @@ import './Login.css';
 import animationData from '../animations/Animation - 1745128919432.json';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
-
+import Footer from '../components/Footer.jsx'; // Import Footer component
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -303,6 +303,7 @@ const defaultOptions = {
           transition="zoom"
         />
       </div>
+      <Footer/>
     </>
   );
 };

@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 
 const reviewSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,  // Reference to the User model
-    ref: 'User',  // Assuming your user model is named 'User'
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
     required: true,
   },
-  name: {
+  review: {
     type: String,
     required: true,
   },
@@ -16,16 +16,7 @@ const reviewSchema = new mongoose.Schema({
     min: 1,
     max: 5,
   },
-  review: {
-    type: String,
-    required: true,
-  },
-  date: {
-    type: Date,
-    default: Date.now,
-  },
-});
+}, { timestamps: true });
 
 const Review = mongoose.model('Review', reviewSchema);
-
 export default Review;

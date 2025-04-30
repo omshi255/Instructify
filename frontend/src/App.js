@@ -17,6 +17,8 @@ import LearningInterests from "./pages/LearningInterests.jsx";
 import FindConnections from "./pages/FindConnections.jsx";
 import UserCourses from "./pages/MyCourses/UserCourses.jsx";
 import AllCourses from "./pages/allCourses/AllCourses.jsx"
+import ReviewList from "./pages/ReviewList.jsx";
+import Settings from "./pages/Settings.jsx";
 
 
 const App = () => {
@@ -29,7 +31,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/mycourses/:userId" element={<UserCourses />} />
-        <Route path="/dashboard/bookmarked" element={<AllCourses />} />
+ 
         {/* Protected Routes */}
         <Route
           path="/dashboard"
@@ -48,9 +50,12 @@ const App = () => {
           <Route path="interests" element={<LearningInterests />} />
           <Route path="update-profile" element={<UpdateProfilePage />} />
           <Route path="connections" element={<FindConnections />} />
-          
+          <Route path="/dashboard/reviews" element={<ReviewList />} />
+          <Route path="/dashboard/settings" element={<Settings/>} />
+          <Route path="/dashboard/bookmarked" element={<AllCourses />} />
         </Route>
       </Routes>
+   
     </div>
   );
 };
