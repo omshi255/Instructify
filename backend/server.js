@@ -9,10 +9,9 @@ import teachingSkillRoutes from './routes/teachingSkillRoutes.js';
 import courseRoutes from "./routes/courseRoutes.js";
 import activityRoutes from './routes/activity.js';
 import reviewRoutes from './routes/reviewRoutes.js';
- // Import the messaging routes
-import http from 'http';
-import { Server as socketIo } from 'socket.io'; // Correct import
 
+
+import path from "path";
 dotenv.config(); // Load environment variables
 
 cloudinary.config({
@@ -24,8 +23,7 @@ cloudinary.config({
 connectDB(); // Connect MongoDB
 
 const app = express();
-const server = http.createServer(app); // Create an HTTP server from the express app
-const io = new socketIo(server); // Set up Socket.IO
+const __dirname = path.resolve();
 
 // Middleware
 app.use(cors()); // Enable CORS
@@ -41,31 +39,20 @@ app.use('/api/activity', activityRoutes);
 app.use('/api/review', reviewRoutes);
  // For messaging routes
 
-// Socket.IO event handling
-io.on('connection', (socket) => {
-    console.log('A user connected');
-
-    // Listen for incoming messages from clients
-    socket.on('send_message', (data) => {
-        console.log('Message received:', data);
-
-        // Broadcast the message to other users (real-time)
-        socket.broadcast.emit('receive_message', data);
-    });
-
-    // When a user disconnects
-    socket.on('disconnect', () => {
-        console.log('User disconnected');
-    });
-});
-
 // Test route
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+  });
+}
 
 // Start the server
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
