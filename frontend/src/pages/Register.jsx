@@ -7,6 +7,25 @@ import './Register.css';
 import { toast, ToastContainer, Zoom } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faUser,
+  faEnvelope,
+  faLock,
+  faUpload,
+  faInfoCircle,
+  faLink,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faLinkedin,
+  faGithub,
+  faDiscord,
+  faTwitter,
+  faInstagram,
+  faFacebook,
+} from '@fortawesome/free-brands-svg-icons';
+
 import Navbar from '../components/Navbar';
 
 const Register = () => {
@@ -14,21 +33,24 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [profilePic, setProfilePic] = useState(null);
-  const [bio, setBio] = useState(''); // New state for bio
-  const [description, setDescription] = useState(''); // New state for description
+  const [bio, setBio] = useState('');
+  const [description, setDescription] = useState('');
   const [passwordVisible, setPasswordVisible] = useState(false);
-  const [errors, setErrors] = useState({});
+
   const [loading, setLoading] = useState(false);
+
   const [linkedin, setLinkedin] = useState('');
-const [github, setGithub] = useState('');
-const [discord, setDiscord] = useState('');
-const [twitter, setTwitter] = useState('');
-const [instagram, setInstagram] = useState('');
-const [facebook, setFacebook] = useState('');
+  const [github, setGithub] = useState('');
+  const [discord, setDiscord] = useState('');
+  const [twitter, setTwitter] = useState('');
+  const [instagram, setInstagram] = useState('');
+  const [facebook, setFacebook] = useState('');
+  const [showSocialLinks, setShowSocialLinks] = useState(false);
 
   const navigate = useNavigate();
 
   const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible);
+  const toggleSocialLinks = () => setShowSocialLinks((prev) => !prev);
 
   const handleFileChange = (e) => {
     setProfilePic(e.target.files[0]);
@@ -37,32 +59,28 @@ const [facebook, setFacebook] = useState('');
 
   const validateForm = () => {
     const errors = {};
+    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
 
     if (!name) {
       errors.name = 'Name is required';
       toast.error('Name is required');
-      console.log('❌ Name is missing');
     }
 
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!email) {
       errors.email = 'Email is required';
       toast.error('Email is required');
-      console.log('❌ Email is missing');
     } else if (!emailPattern.test(email)) {
       errors.email = 'Enter a valid email';
       toast.error('Enter a valid email');
-      console.log('❌ Invalid email format');
     }
 
     if (!password) {
       errors.password = 'Password is required';
       toast.error('Password is required');
-      console.log('❌ Password is missing');
     } else if (password.length < 6) {
       errors.password = 'Password must be at least 6 characters';
       toast.error('Password must be at least 6 characters');
-      console.log('❌ Password too short');
     }
 
     if (!bio) {
@@ -75,74 +93,84 @@ const [facebook, setFacebook] = useState('');
       toast.error('Description is required');
     }
 
-    setErrors(errors);
+    if (linkedin && !urlPattern.test(linkedin)) {
+      errors.linkedin = 'Invalid LinkedIn URL';
+      toast.error('Invalid LinkedIn URL');
+    }
+
+    if (github && !urlPattern.test(github)) {
+      errors.github = 'Invalid GitHub URL';
+      toast.error('Invalid GitHub URL');
+    }
+
+    if (discord && !urlPattern.test(discord)) {
+      errors.discord = 'Invalid Discord URL';
+      toast.error('Invalid Discord URL');
+    }
+
+    if (twitter && !urlPattern.test(twitter)) {
+      errors.twitter = 'Invalid Twitter URL';
+      toast.error('Invalid Twitter URL');
+    }
+
+    if (instagram && !urlPattern.test(instagram)) {
+      errors.instagram = 'Invalid Instagram URL';
+      toast.error('Invalid Instagram URL');
+    }
+
+    if (facebook && !urlPattern.test(facebook)) {
+      errors.facebook = 'Invalid Facebook URL';
+      toast.error('Invalid Facebook URL');
+    }
+
     return Object.keys(errors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('📤 Submit button clicked');
+    if (!validateForm()) return;
 
-    if (!validateForm()) {
-      console.log('❌ Form validation failed');
-      return;
-    }
-
-    console.log('✅ Form validation passed');
     setLoading(true);
-
     const formData = new FormData();
+
     formData.append('name', name);
     formData.append('email', email);
     formData.append('password', password);
-    formData.append('bio', bio); // Add bio to form data
-    formData.append('description', description); // Add description to form data
+    formData.append('bio', bio);
+    formData.append('description', description);
     if (profilePic) {
       formData.append('profilePic', profilePic);
-      console.log('🖼️ Profile picture attached');
-    } else {
-      console.log('📁 No profile picture attached');
     }
 
-    console.log('📦 Sending registration request to backend...');
+    formData.append('linkedin', linkedin);
+    formData.append('github', github);
+    formData.append('discord', discord);
+    formData.append('twitter', twitter);
+    formData.append('instagram', instagram);
+    formData.append('facebook', facebook);
 
     try {
       const response = await axios.post('http://localhost:5000/api/auth/register', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
 
-      console.log('✅ User registered successfully:', response.data);
+      toast.success('Registration successful! Redirecting...');
       localStorage.setItem('token', response.data.token);
-      toast.success('Registration successful! Please login.');
 
       setTimeout(() => {
-        console.log('🔁 Redirecting to login page...');
         navigate('/dashboard');
       }, 2000);
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Registration failed. Please try again.';
       toast.error(errorMessage);
-      console.error('❌ Registration error:', error.response || error);
     } finally {
       setLoading(false);
     }
   };
-  const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
 
-  if (linkedin && !urlPattern.test(linkedin)) {
-    errors.linkedin = 'Enter a valid LinkedIn URL';
-    toast.error('Invalid LinkedIn URL');
-  }
-  if (github && !urlPattern.test(github)) {
-    errors.github = 'Enter a valid GitHub URL';
-    toast.error('Invalid GitHub URL');
-  }
-  // Do similarly for discord, twitter, etc.
-  
   return (
     <>
       <Navbar />
-
       <div className="register-container">
         {loading && (
           <div className="loader-overlay">
@@ -156,96 +184,107 @@ const [facebook, setFacebook] = useState('');
         </div>
 
         <div className="register-right">
-          <h2>Create Account</h2>
+          <h2 className='head-register'>Create Account</h2>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
-            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-            {errors.name && <div className="error">{errors.name}</div>}
+            <div className="input-with-icon">
+              <FontAwesomeIcon icon={faUser} />
+              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
 
-            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            {errors.email && <div className="error">{errors.email}</div>}
+            <div className="input-with-icon">
+              <FontAwesomeIcon icon={faEnvelope} />
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
 
-            <div className="password-input">
+            <div className="password-input input-with-icon">
+              <FontAwesomeIcon icon={faLock} />
               <input
                 type={passwordVisible ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                required
               />
               <span className="password-eye" onClick={togglePasswordVisibility}>
                 {passwordVisible ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
-            {errors.password && <div className="error">{errors.password}</div>}
 
-            {/* Bio input */}
-            <textarea
-              placeholder="Write a short bio"
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-              rows="4"
-            />
-            {errors.bio && <div className="error">{errors.bio}</div>}
+            <div className="input-with-icon">
+              <FontAwesomeIcon icon={faInfoCircle} />
+              <textarea placeholder="Short bio" value={bio} onChange={(e) => setBio(e.target.value)} />
+            </div>
 
-            {/* Description input */}
-            <textarea
-              placeholder="Describe yourself"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              rows="4"
-            />
-            {errors.description && <div className="error">{errors.description}</div>}
+            <div className="input-with-icon">
+              <FontAwesomeIcon icon={faInfoCircle} />
+              <textarea placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
+            </div>
 
-            <input type="file" onChange={handleFileChange} />
+            <div className="input-with-icon">
+              <FontAwesomeIcon icon={faUpload} />
+              <input type="file" onChange={handleFileChange} />
+            </div>
+
+            <div className="social-section">
+              <button type="button" className="toggle-social-btn" onClick={toggleSocialLinks}>
+                <FontAwesomeIcon icon={faLink} style={{ marginRight: '6px' }} />
+                {showSocialLinks ? 'Hide Social Links ▲' : 'Add Social Links ▼'}
+              </button>
+
+              {showSocialLinks && (
+                <div className="social-links-box">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                  <input
+                    type="url"
+                    placeholder="LinkedIn URL"
+                    value={linkedin}
+                    onChange={(e) => setLinkedin(e.target.value)}
+                  />
+                  <FontAwesomeIcon icon={faGithub} />
+                  <input
+                    type="url"
+                    placeholder="GitHub URL"
+                    value={github}
+                    onChange={(e) => setGithub(e.target.value)}
+                  />
+                  <FontAwesomeIcon icon={faDiscord} />
+                  <input
+                    type="url"
+                    placeholder="Discord URL"
+                    value={discord}
+                    onChange={(e) => setDiscord(e.target.value)}
+                  />
+                  <FontAwesomeIcon icon={faTwitter} />
+                  <input
+                    type="url"
+                    placeholder="Twitter URL"
+                    value={twitter}
+                    onChange={(e) => setTwitter(e.target.value)}
+                  />
+                  <FontAwesomeIcon icon={faInstagram} />
+                  <input
+                    type="url"
+                    placeholder="Instagram URL"
+                    value={instagram}
+                    onChange={(e) => setInstagram(e.target.value)}
+                  />
+                  <FontAwesomeIcon icon={faFacebook} />
+                  <input
+                    type="url"
+                    placeholder="Facebook URL"
+                    value={facebook}
+                    onChange={(e) => setFacebook(e.target.value)}
+                  />
+                </div>
+              )}
+            </div>
+
             <button type="submit">Register</button>
           </form>
-          <br />
-          <p>
+
+          <p style={{ marginTop: '10px' }}>
             Already have an account? <Link to="/login">Login</Link>
           </p>
-          <input
-  type="url"
-  placeholder="LinkedIn Profile URL"
-  value={linkedin}
-  onChange={(e) => setLinkedin(e.target.value)}
-/>
-
-<input
-  type="url"
-  placeholder="GitHub Profile URL"
-  value={github}
-  onChange={(e) => setGithub(e.target.value)}
-/>
-
-<input
-  type="url"
-  placeholder="Discord Profile URL"
-  value={discord}
-  onChange={(e) => setDiscord(e.target.value)}
-/>
-
-<input
-  type="url"
-  placeholder="Twitter Profile URL"
-  value={twitter}
-  onChange={(e) => setTwitter(e.target.value)}
-/>
-
-<input
-  type="url"
-  placeholder="Instagram Profile URL"
-  value={instagram}
-  onChange={(e) => setInstagram(e.target.value)}
-/>
-
-<input
-  type="url"
-  placeholder="Facebook Profile URL"
-  value={facebook}
-  onChange={(e) => setFacebook(e.target.value)}
-/>
         </div>
-
 
         <ToastContainer
           position="top-right"

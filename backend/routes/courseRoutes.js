@@ -5,10 +5,10 @@ import {
   deleteCourse,
   updateCourse,
   getCoursesByUserId,
+  getAllCourses,
 } from "../controllers/courseController.js";
 import { protect } from "../middleware/Authmiddleware.js";
 import Course from "../models/Course.js"; // Assuming you have a Course model defined
-
 
 const router = express.Router();
 
@@ -17,5 +17,6 @@ router.get("/", protect, getMyCourses);
 router.put("/:id", protect, updateCourse); // 🆕 Edit route
 router.delete("/:id", protect, deleteCourse);
 router.get("/user/:userId", protect, getCoursesByUserId);
+router.get("/all", protect, getAllCourses);
 
 export default router;

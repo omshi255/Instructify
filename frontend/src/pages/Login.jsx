@@ -139,6 +139,7 @@
 // export default Login;
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import { ToastContainer, toast, Zoom } from 'react-toastify';
@@ -153,6 +154,7 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false); // 👈 loader state
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const navigate = useNavigate();
 
   const handleLoginSubmit = async (e) => {
@@ -196,15 +198,41 @@ const Login = () => {
     }
   };
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-    },
+ // Update window width on resize
+ useEffect(() => {
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
   };
+  
+  // Add event listener for resize
+  window.addEventListener('resize', handleResize);
+  
+  // Cleanup the event listener on unmount
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
 
+// Lottie options configuration
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: animationData,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
+
+  const getLottieSize = () => {
+    if (windowWidth >= 1024) {
+      return { height: 400, width: 400 }; // Large screens
+    } else if (windowWidth >= 768) {
+      return { height: 300, width: 300 }; // Medium screens
+    } else {
+      return { height: 200, width: 200 }; // Small screens
+    }
+  };
+  const { height, width } = getLottieSize();
   return (
     <>
       <Navbar />
@@ -219,7 +247,9 @@ const Login = () => {
 
       <div className="login-container">
         <div className="login-left">
-          <Lottie options={defaultOptions} height={400} width={400} />
+        <div className="lottie-container">
+      <Lottie options={defaultOptions} height={height} width={width} />
+    </div>
         </div>
 
         <div className="login-right">

@@ -7,6 +7,12 @@
   --error-color: #e53e3e;
   --file-input-bg: #ffffff;
 }
+.lottie-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
 
 .error-message {
   color: var(--error-color);
@@ -20,8 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 500px;
-  margin-top: 90px;
+  height: 640px;
+
   background-color: var(--light-background);
   padding: 20px;
   flex-direction: row;
@@ -203,7 +209,11 @@ a:hover {
     flex-direction: column;
     gap: 20px;
   }
-
+  .react-lottie {
+    width: 300px;
+  width: 300px;
+    animation: fadeIn 2s ease-in-out;
+  }
   .login-left,
   .login-right {
     width: 100%;

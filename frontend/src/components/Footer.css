@@ -126,7 +126,18 @@
     .footer-content p {
       font-size: 1.1rem; /* Slightly smaller text */
     }
-  
+    .footer-content p {
+      font-size: 13px;
+      margin: 0;
+    }
+    
+    .heart {
+      color: red; /* Heart color */
+    }
+    
+    .name {
+      font-weight: bold;
+    }
     .social-icon {
       font-size: 1.3rem; /* Slightly smaller icons */
     }
@@ -135,7 +146,18 @@
     .email-submit {
       width: 200px; /* Smaller input and submit button */
     }
-  
+    .footer-content p {
+      font-size: 13px;
+      margin: 0;
+    }
+    
+    .heart {
+      color: red; /* Heart color */
+    }
+    
+    .name {
+      font-weight: bold;
+    }
     .social-links {
       margin-top: 1rem;
       display: flex;
@@ -154,7 +176,18 @@
     .footer {
       padding: 1.5rem 0; /* Less padding on smaller screens */
     }
-  
+    .footer-content p {
+      font-size: 13px;
+      margin: 0;
+    }
+    
+    .heart {
+      color: red; /* Heart color */
+    }
+    
+    .name {
+      font-weight: bold;
+    }
     .footer-content p {
       font-size: 14px; /* Adjust text size for readability */
       margin-bottom: 20px;
@@ -192,7 +225,18 @@
     .footer {
       padding: 1rem 0; /* Less padding on very small screens */
     }
-  
+    .footer-content p {
+      font-size: 13px;
+      margin: 0;
+    }
+    
+    .heart {
+      color: red; /* Heart color */
+    }
+    
+    .name {
+      font-weight: bold;
+    }
     .footer-content p {
       font-size: 0.9rem; /* Adjust text size */
     }

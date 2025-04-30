@@ -185,7 +185,7 @@ body {
 
 .signup-btn {
   background-color: #38a169;
-  color: white;
+  color: white !important;
 }
 
 .signup-btn:hover {
@@ -291,33 +291,6 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .navbar-links,
-  .navbar-actions {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .dropdown-content {
-    position: static;
-  }
-
-  .search-input {
-    width: 100px;
-  }
-
-  .search-input:focus {
-    width: 180px;
-  }
-
-  .search-bar {
-    margin: 10px 0;
-  }
-}
-/* Responsive */
 @media (max-width: 1024px) {
   .navbar-links {
     gap: 1rem;
@@ -334,9 +307,29 @@ body {
   .logo-text {
     font-size: 1.4rem;
   }
+
+  /* Show Hamburger and Adjust Navbar Links */
+  .navbar-links {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+
+  /* Adjust Buttons */
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .login-btn, .signup-btn {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Navbar Links & Actions */
   .navbar-links,
   .navbar-actions {
     display: none;
@@ -352,6 +345,7 @@ body {
 
   .search-input {
     width: 100px;
+    width: 150px !important;
   }
 
   .search-input:focus {
@@ -360,6 +354,7 @@ body {
 
   .search-bar {
     margin: 10px 0;
+    
   }
 
   .navbar-container {
@@ -378,6 +373,7 @@ body {
   .btn {
     font-size: 0.8rem;
     padding: 6px 12px;
+    width: 100px !important;
   }
 
   .navbar-logo {
@@ -386,6 +382,7 @@ body {
 }
 
 @media (max-width: 480px) {
+  /* For Extra Small Screens */
   .navbar-container {
     padding: 0.5rem;
   }
@@ -417,5 +414,11 @@ body {
   .mobile-menu ul {
     padding: 0;
     gap: 0.3rem;
+  }
+
+  /* Adjust Button Font Sizes */
+  .btn {
+    font-size: 0.75rem;
+    padding: 6px 10px;
   }
 }

@@ -1,0 +1,166 @@
+.all-courses-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .all-courses-title {
+    color: #2f855a;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .loading,
+  .error,
+  .no-courses {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 2rem;
+  }
+  
+  .error {
+    color: #d32f2f;
+  }
+  
+  .no-courses {
+    color: #666;
+  }
+  
+  .course-list {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .course-item {
+    background: #f9fafb;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+  }
+  
+  .course-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #38a169;
+    transition: all 0.3s ease;
+  }
+  
+  .course-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-item:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+  .course-thumb {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 1px solid #d1fae5;
+  }
+  
+  .course-item h3 {
+    font-size: 1.5rem;
+    color: #222;
+    margin: 0 0 0.5rem;
+  }
+  
+  .course-item p {
+    font-size: 1rem;
+    color: #555;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+  }
+  
+  .course-item p em {
+    font-size: 0.9rem;
+    color: #1976d2;
+  }
+  
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+  
+  .bookmark-btn {
+    background: #38a169;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .bookmark-btn.bookmarked {
+    background: #e53e3e;
+  }
+  
+  .bookmark-btn:hover {
+    background: #2f855a;
+  }
+  
+  .bookmark-btn.bookmarked:hover {
+    background: #c53030;
+  }
+  
+  .bookmark-btn:focus-visible {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .course-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    .bookmark-btn 
+    {
+        width: 20px;
+        height: 20px;
+    }
+    .course-item {
+      width: 100%;
+      max-width: 350px;
+    }
+  
+    .actions {
+      justify-content: flex-end;
+    }
+    
+  }

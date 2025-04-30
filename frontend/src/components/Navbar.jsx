@@ -121,14 +121,14 @@ const Navbar = () => {
             />
             <i className="fas fa-search search-icon"></i>
           </li>
-          <li></li>
-        </ul>
+      
 
-        {/* Buttons */}
-        <div className="navbar-actions">
-  <Link to="/login" className="btn login-btn">Login</Link>
+          <Link to="/login" className="btn login-btn">Login</Link>
   <Link to="/register" className="btn signup-btn">Sign Up</Link>
-</div>
+
+      
+        </ul>
+  
 
 
         {/* Hamburger Icon */}
@@ -148,7 +148,7 @@ const Navbar = () => {
       <div className={`mobile-menu ${isOpen ? "show" : ""}`}>
         <ul>
           <li>
-            <a href="#home" onClick={toggleMenu}>
+            <a href="/" onClick={toggleMenu}>
               Explore
             </a>
           </li>
@@ -293,12 +293,10 @@ const Navbar = () => {
             <i className="fas fa-search search-icon"></i>
           </li>
 
-          <li>
-  <Link to="/login" onClick={toggleMenu}>Login</Link>
-</li>
-<li>
-  <Link to="/register" onClick={toggleMenu}>Sign Up</Link>
-</li>
+      
+  <Link to="/login" className="btn login-btn">Login</Link>
+  <Link to="/register" className="btn signup-btn">Sign Up</Link>
+
 
         </ul>
       </div>
