@@ -15,6 +15,8 @@ import "./App.css";
 import LearningProgress from "./pages/LearningProgress.jsx";
 import LearningInterests from "./pages/LearningInterests.jsx";
 import FindConnections from "./pages/FindConnections.jsx";
+import UserCourses from "./pages/MyCourses/UserCourses.jsx";
+
 const App = () => {
   return (
     <div>
@@ -24,6 +26,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
+        <Route path="/mycourses/:userId" element={<UserCourses />} />
 
         {/* Protected Routes */}
         <Route
@@ -38,20 +41,13 @@ const App = () => {
           <Route path="teaching-skills" element={<TeachingSkills />} />
           <Route path="mycourses" element={<MyCourses />} />
           <Route path="create-course" element={<CourseForm />} />
-          <Route path="/dashboard/mycourse/:id" element={<MyCourses />} />
-          {/* Your new LessonPage Route */}
-          <Route path="/dashboard/progress" element={<LearningProgress/>} />
-          <Route path="/dashboard/interests" element={<LearningInterests />} />
-          <Route path="/dashboard" element={<Dashboard />} />    {/* Dashboard component home par */}
-          <Route path="/dashboard/update-profile" element={<UpdateProfilePage />} /> {/* Update Profile page */}
-          <Route path="/dashboard/connections" element = {<FindConnections/>} />
-          {/* <Route path="/dashboard/intrests" element={<LessonPage/>
-          <Route path="/dashboard/learning/:courseId/:lessonId" element={<LessonPage />} /> */}
-          
-
+          <Route path="mycourse/:id" element={<MyCourses />} />
+          <Route path="progress" element={<LearningProgress />} />
+          <Route path="interests" element={<LearningInterests />} />
+          <Route path="update-profile" element={<UpdateProfilePage />} />
+          <Route path="connections" element={<FindConnections />} />
         </Route>
       </Routes>
-
     </div>
   );
 };

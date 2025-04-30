@@ -1,0 +1,75 @@
+.lesson-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .lesson-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    background-color: #f7f9fc; /* Subtle background change on hover */
+  }
+  
+  .lesson-card strong {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.4rem;
+  }
+  
+  .lesson-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+  }
+  
+  .lesson-card a {
+    color: #007bff;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .lesson-card a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  .lesson-card .lesson-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 1rem;
+  }
+  
+  .lesson-card .lesson-meta span {
+    display: inline-block;
+    margin-right: 0.6rem;
+  }
+  
+  .lesson-card .lesson-meta .lesson-date {
+    font-style: italic;
+  }
+  
+  .lesson-card .lesson-meta .lesson-author {
+    font-weight: 600;
+    color: #333;
+  }
+  .course-list-title
+  {
+    margin-top: 50px;
+    text-align: center;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+  }
+  .course-list-title i
+  {
+    color: green;
+  }

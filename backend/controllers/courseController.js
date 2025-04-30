@@ -105,3 +105,22 @@ export const updateCourse = async (req, res) => {
     res.status(500).json({ success: false, message: "Server error", error: error.message });
   }
 };
+// Get courses by a specific user ID (the user who created them)
+export const getCoursesByUserId = async (req, res) => {
+  try {
+    const { userId } = req.params;  // Get userId from the URL parameter
+
+    // Find courses where createdBy matches the userId
+    const courses = await Course.find({ createdBy: userId });
+
+    if (courses.length === 0) {
+      return res.status(404).json({ success: false, message: "No courses found for this user" });
+    }
+
+    console.log(`✅ Fetched ${courses.length} course(s) for user: ${userId}`);
+    res.status(200).json({ success: true, courses });
+  } catch (error) {
+    console.error("❌ Error fetching courses:", error.message);
+    res.status(500).json({ success: false, message: "Error fetching courses", error: error.message });
+  }
+};

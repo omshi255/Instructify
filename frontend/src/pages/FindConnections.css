@@ -1,39 +1,177 @@
-/* src/index.css (Tailwind CSS styles or your own CSS) */
+/* src/index.css (Updated styles for your user list) */
 
 .users-list {
     padding: 20px;
-  }
-  
-  .users-container {
+}
+
+.users-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-  }
-  
-  .user-card {
-    background: white;
+    justify-content: space-between;
+}
+
+.register-user-heading {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.user-card {
+    background: #f0fff4;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 200px;
-  }
-  
-  .user-avatar {
-    width: 100px;
-    height: 100px;
+    text-align: left;
+    width: 250px; /* Fixed width to ensure a consistent layout */
+}
+
+.user-card .user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: rebeccapurple;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 15px;
+}
+/* User Profile Container */
+.user-profile {
+    
+   
+    border-radius: 8px;
+   
+    width: 100%;
+   
+    
+    font-family: 'Arial', sans-serif;
+    color: #333;
   }
   
-  .user-card h3 {
-    font-size: 1.2rem;
+  /* User Name */
+  .user-name {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-top: 10px;
+    color: #007bff;
+    margin-bottom: 10px;
   }
   
-  .user-card p {
+  .user-name .user-icon {
+    font-size: 20px;
+    margin-right: 8px;
+    color: tomato;
+  }
+  
+  /* Paragraph Styles for User Info */
+  p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  strong {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* User Email */
+  .user-email {
+    margin-bottom: 10px;
+    color: #38a169;
+  }
+  
+  /* User Bio */
+  .user-bio {
+    font-style: italic;
+    color: crimson;
+  }
+  
+  /* Learning Interests */
+  .user-interests {
+    color: #007bff;
+  }
+  
+  /* User Description */
+  .user-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    font-style: italic;
+  }
+  
+  /* Adding Hover Effects for Text */
+  .user-profile p:hover {
+    color: #38a169;
+    transition: color 0.3s ease;
+  }
+  
+.user-card h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0;
+    color: #38a169;
+}
+
+.user-card p {
     font-size: 0.9rem;
-    margin-top: 5px;
-  }
-  
+    color: #555;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #333;
+    font-size: 1.2rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+    color: #0077b5; /* Example: LinkedIn color */
+}
+
+.user-card .user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-card .user-details .user-info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-card .user-details .user-info-item strong {
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.user-card .user-details .user-info-item span {
+    font-size: 0.9rem;
+    color: #555;
+}
+.visit-courses-btn p
+{
+    font-weight: 700;
+    color: #38a169;
+
+
+}
+.visit-courses-btn p:hover
+{
+    color: #38a169;
+    transition: color 0.3s ease;
+}

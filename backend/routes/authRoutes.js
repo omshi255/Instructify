@@ -33,4 +33,9 @@ router.post('/add-learning-interest', protect, addLearningInterest); // This is 
 router.delete('/delete-learning-interest', protect, removeLearningInterest); // This is the new route for deleting a learning interest
 router.get('/get-learning-interest', protect, getLearningInterests); // This is the new route for getting a user profile
 router.get('/all-users', getAllUsers);
+
+
+// GET /api/auth/user/:id
+
+   
 export default router;
