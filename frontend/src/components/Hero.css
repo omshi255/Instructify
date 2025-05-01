@@ -4,7 +4,7 @@
     align-items: center;
     background-color: #f0fff4;
     padding: 50px;
-    min-height: 500px;
+    height: 100vh;
     animation: fadeIn 1s ease-in;
     border-radius: 10px; /* Optional for rounded corners */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow for a modern look */
@@ -299,6 +299,11 @@
   
   .cssbuttons-io-button:active .icon {
     transform: scale(0.95);
+  }
+
+  .cssbuttons-io-button .Link{
+    text-decoration: none !important;
+    color: white !important;
   }
   .features-section {
     display: flex;
@@ -654,207 +659,25 @@
   transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+/* For screens max-width 1024px */
+@media (min-width: 1024px) {
   .why-choose-us {
     flex-direction: column;
     padding: 80px 30px;
   }
-  .icon-section {
+  .why-choose-us {
     display: flex;
-    justify-content: space-between;
-    padding: 2rem 3rem;
-    background-color: #f0fff4;
-    /* margin-top: 20px; */
-    flex-wrap: wrap;
-    border-top: 1px solid #eee;
-  }
-  .why-left {
-    margin-bottom: 40px;
-    padding-right: 0;
-  }
-  .icon-card {
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 200px;
+    justify-content: space-evenly;
+    padding: 0px 60px;
+    background-color: #f0fff4; /* Lighter background for a clean look */
+    border-radius: 20px;
+    color: #38a169;
+    /* margin: 80px 0; */
+    transition: all 0.3s ease;
     text-align: center;
-    padding: 1rem;
-    transition: transform 0.3s ease;
-    margin-left: 30px;
   }
-  .why-left h2 {
-    font-size: 1.8rem;
-  }
-
-  .why-left li {
-    font-size: 1rem;
-  }
-
-  .why-right {
-    margin-top: 40px;
-  }
-
-  .why-right .lottie-container {
-    width: 450px;
-    height: 450px;
-  }
-}
-
-@media (max-width: 768px) {
-  .why-choose-us {
-    padding: 60px 20px;
-  }
-  .icon-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 3rem;
-    background-color: #f0fff4;
-    /* margin-top: 20px; */
-    flex-wrap: wrap;
-    border-top: 1px solid #eee;
-  }
-  .why-left h2 {
-    font-size: 1.6rem;
-  }
-
-  .why-left li {
-    font-size: 0.9rem;
-  }
-
-  .why-right .lottie-container {
-    width: 400px;
-    height: 400px;
-  }
-}
-/* ========== Responsive Styles ========== */
-
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    padding: 30px;
-  }
-  .icon-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 3rem;
-    background-color: #f0fff4;
-    /* margin-top: 20px; */
-    flex-wrap: wrap;
-    border-top: 1px solid #eee;
-   
-  }
-  .hero-text,
-  .hero-image {
-    padding: 10px;
-  }
-
-  .hero h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .hero-video-triangle,
-  .hero-video-circle {
-    width: 200px;
-    height: 200px;
-  }
-
-  .badge {
-    padding: 0.6rem;
-    font-size: 0.75rem;
-    top: 5%;
-    left: 5%;
-  }
-
-  .courses,
-  .rating {
-    top: auto;
-    left: auto;
-    right: 5%;
-    bottom: 5%;
-    transform: translateX(0);
-    font-size: 0.75rem;
-    padding: 0.6rem;
-  }
-  .icon-section {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 3rem;
-    background-color: #f0fff4;
-    /* margin-top: 20px; */
-    flex-wrap: wrap;
-    border-top: 1px solid #eee;
-  }
-  .features-section {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .feature-card {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-  }
-
-  .testimonials h2 {
-    font-size: 2rem;
-  }
-
-  .testimonial-card {
-    padding: 20px;
-    font-size: 0.95rem;
-  }
-
-  .cssbuttons-io-button {
-    width: 150px;
-    font-size: 16px;
-  }
-
-  .cssbuttons-io-button .icon {
-    width: 2.5em;
-    height: 2.5em;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .hero-video-triangle,
-  .hero-video-circle {
-    width: 150px;
-    height: 150px;
-  }
-
-  .testimonial-card {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .cssbuttons-io-button {
-    font-size: 15px;
-  }
-
-  .cssbuttons-io-button .icon {
-    width: 2em;
-    height: 2em;
-  }
-}/* For screens max-width 1024px */
-@media (max-width: 1024px) {
-  .why-choose-us {
-    flex-direction: column;
-    padding: 80px 30px;
-  }
-
+  
   .why-left {
     margin-bottom: 40px;
     padding-right: 0;
@@ -880,11 +703,21 @@
 }
 
 /* For screens max-width 768px */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  
   .why-choose-us {
-    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 60px;
+    background-color: #f0fff4; /* Lighter background for a clean look */
+    border-radius: 20px;
+    color: #38a169;
+    /* margin: 80px 0; */
+    transition: all 0.3s ease;
+    text-align: center;
   }
-
+  
   .why-left h2 {
     font-size: 1.6rem;
   }
@@ -905,15 +738,42 @@
 }
 
 /* For screens max-width 480px */
-@media (max-width: 480px) {
-  .why-choose-us {
-    padding: 40px 15px;
+@media (max-width: 600px) {
+ .icon-section
+ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ }
+ .why-choose-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px 60px;
+  background-color: #f0fff4; /* Lighter background for a clean look */
+  border-radius: 20px;
+  color: #38a169;
+  /* margin: 80px 0; */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+  .hero-text{
+margin-top: 2rem;
+    /* border: 2px solid red; */
   }
 
+  
+  .why-choose-us {
+
+    padding: 40px 15px;
+  }
+  
   .why-left h2 {
     font-size: 1.4rem;
   }
-
+  
   .why-left li {
     font-size: 0.85rem;
     margin-bottom: 20px;

@@ -1,6 +1,6 @@
 /* Footer Styling */
 .footer {
-    background-color:rgb(11, 7, 41); /* Ark Accent color */
+    background-color:rgb(11, 7, 41) !important; /* Ark Accent color */
     color: white;
     padding: 2rem 0;
     text-align: center;

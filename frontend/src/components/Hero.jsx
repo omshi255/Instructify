@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Hero.css";
 import Lottie from "react-lottie";
 import animationData from "../animations/Animation - 1745147608101.json";
@@ -60,8 +61,9 @@ const HeroSection = () => {
           </p>
 
           <div className="button-get-started">
-            <button className="cssbuttons-io-button">
-              Get started
+            <button className="cssbuttons-io-button" >
+           {/* <a href="/register">Get started</a> */}
+           <Link className="Link" to="/register">Get started</Link>
               <div className="icon">
                 <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
