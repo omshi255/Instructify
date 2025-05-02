@@ -21,7 +21,7 @@ cloudinary.config({
 });
 const allowedOrigins = [
   'http://localhost:3000', // development frontend
-  'https://instructifyfin.onrender.com/' // production frontend
+  'https://instructifyfin.onrender.com' // production frontend
 ];
 
 connectDB(); // Connect MongoDB
