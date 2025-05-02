@@ -155,7 +155,7 @@ const HeroSection = () => {
         </div>
 
         <div className="why-right">
-          <Lottie options={whyChooseUsOptions} height={300} width={300} />
+          <Lottie options={whyChooseUsOptions} height={600} width={600} />
         </div>
       </section>
       <section className="review-form-section">

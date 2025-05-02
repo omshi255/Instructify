@@ -23,6 +23,7 @@
     justify-content: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: 50px !important;
   }
   
   .profile-section-heading i {

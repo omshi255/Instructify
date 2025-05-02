@@ -559,18 +559,7 @@
 }
 
 /* Container for the section */
-.why-choose-us {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 0px 60px;
-  background-color: #f0fff4; /* Lighter background for a clean look */
-  border-radius: 20px;
-  color: #38a169;
-  /* margin: 80px 0; */
-  transition: all 0.3s ease;
-  text-align: center;
-}
+
 
 
 /* Left part of the section */
@@ -659,23 +648,35 @@
   transform: scale(1.05);
 }
 
+.why-choose-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0px 60px;
+  background-color: #f0fff4; /* Lighter background for a clean look */
+  border-radius: 20px;
+  color: #38a169;
+  /* margin: 80px 0; */
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
 /* For screens max-width 1024px */
 @media (min-width: 1024px) {
-  .why-choose-us {
-    flex-direction: column;
-    padding: 80px 30px;
-  }
+  
+  
+
   .why-choose-us {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 0px 60px;
     background-color: #f0fff4; /* Lighter background for a clean look */
     border-radius: 20px;
     color: #38a169;
     /* margin: 80px 0; */
     transition: all 0.3s ease;
     text-align: center;
+    padding: 0px 60px;
   }
   
   .why-left {
@@ -716,8 +717,9 @@
     /* margin: 80px 0; */
     transition: all 0.3s ease;
     text-align: center;
+    margin: 50px 0;
   }
-  
+ 
   .why-left h2 {
     font-size: 1.6rem;
   }
@@ -732,9 +734,7 @@
   }
 
   /* Adjust margins and padding for smaller devices */
-  .why-choose-us {
-    margin: 50px 0;
-  }
+ 
 }
 
 /* For screens max-width 480px */
@@ -746,29 +746,27 @@
   align-items: center;
 
  }
- .why-choose-us {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 0px 60px;
-  background-color: #f0fff4; /* Lighter background for a clean look */
-  border-radius: 20px;
-  color: #38a169;
-  /* margin: 80px 0; */
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
+ 
   .hero-text{
 margin-top: 2rem;
     /* border: 2px solid red; */
   }
 
-  
   .why-choose-us {
-
-    padding: 40px 15px;
+    flex-direction: column;
+    padding: 80px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 60px;
+    background-color: #f0fff4; /* Lighter background for a clean look */
+    border-radius: 20px;
+    color: #38a169;
+    /* margin: 80px 0; */
+    transition: all 0.3s ease;
+    text-align: center;
   }
+ 
   
   .why-left h2 {
     font-size: 1.4rem;
