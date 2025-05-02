@@ -20,7 +20,7 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 const allowedOrigins = [
-  'http://localhost:3000', // development frontend
+  'http://localhost:5000', // development frontend
   'https://instructifyfin.onrender.com' // production frontend
 ];
 
