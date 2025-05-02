@@ -19,10 +19,6 @@ cloudinary.config({
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
-const allowedOrigins = [
-  'http://localhost:5000', // development frontend
-  'https://instructifyfin.onrender.com' // production frontend
-];
 
 connectDB(); // Connect MongoDB
 
@@ -30,18 +26,7 @@ const app = express();
 const __dirname = path.resolve();
 
 // Middleware
-app.use(cors({
-  origin: function (origin, callback) {
-    // allow requests with no origin (like mobile apps or curl)
-    if (!origin) return callback(null, true);
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    } else {
-      return callback(new Error('Not allowed by CORS'));
-    }
-  },
-  credentials: true,
-})); // Enable CORS
+app.use(cors()); // Enable CORS
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded requests
 
