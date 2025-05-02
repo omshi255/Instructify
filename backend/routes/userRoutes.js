@@ -13,7 +13,7 @@ import {
 const router = express.Router();
 
 // Fetch learning interests of a user
-router.get("/:userId/learning-interests", async (req, res) => {
+router.get("/learning-interests/:userId", async (req, res) => {
   const { userId } = req.params;
   try {
     const user = await User.findById(userId);
@@ -27,7 +27,7 @@ router.get("/:userId/learning-interests", async (req, res) => {
 });
 
 // Add or update learning interests
-router.put("/:userId/learning-interests", async (req, res) => {
+router.put("/learning-interests/:userId", async (req, res) => {
   const { userId } = req.params;
   const { interest, interests } = req.body;
 
