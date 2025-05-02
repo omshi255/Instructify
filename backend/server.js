@@ -29,7 +29,6 @@ const __dirname = path.resolve();
 app.use(cors()); // Enable CORS
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded requests
-app.use('/uploads', express.static('uploads'));
 
 // Register routes
 app.use('/api/auth', authRoutes); // For authentication routes
@@ -44,6 +43,7 @@ app.use('/api/review', reviewRoutes);
 app.get('/', (req, res) => {
   res.send('API is running...');
 });
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
@@ -51,8 +51,6 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "../frontend", "build", "index.html"));
   });
 }
-
-
 
 // Start the server
 const PORT = process.env.PORT || 5000;
