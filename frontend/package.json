@@ -16,6 +16,7 @@
     "backend": "file:../backend",
     "compressorjs": "^1.2.1",
     "framer-motion": "^12.9.2",
+    "instructify": "file:..",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.503.0",
     "react": "^19.1.0",
