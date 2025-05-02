@@ -7,7 +7,7 @@ import cors from 'cors';
 import { v2 as cloudinary } from "cloudinary";
 import teachingSkillRoutes from './routes/teachingSkillRoutes.js';
 import courseRoutes from "./routes/courseRoutes.js";
-import activityRoutes from './routes/activity.js';
+
 import reviewRoutes from './routes/reviewRoutes.js';
 
 
@@ -35,7 +35,6 @@ app.use('/api/auth', authRoutes); // For authentication routes
 app.use('/api/user', userRoutes); // For user-related routes (learning-interests)
 app.use('/api/teachingskills', teachingSkillRoutes);
 app.use("/api/courses", courseRoutes);
-app.use('/api/activity', activityRoutes);
 app.use('/api/review', reviewRoutes);
  // For messaging routes
 

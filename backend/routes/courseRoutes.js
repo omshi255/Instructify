@@ -8,7 +8,7 @@ import {
   getAllCourses,
 } from "../controllers/courseController.js";
 import { protect } from "../middleware/Authmiddleware.js";
-import Course from "../models/Course.js"; // Assuming you have a Course model defined
+
 
 const router = express.Router();
 
