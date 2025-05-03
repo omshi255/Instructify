@@ -15,7 +15,7 @@ const ProtectedRoute = ({ children }) => {
       }
 
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/me', {
+        const res = await axios.get('/api/auth/me', {
           headers: {
             Authorization: `Bearer ${token}`, // Add Bearer token
           },
