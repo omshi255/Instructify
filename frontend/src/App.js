@@ -15,7 +15,7 @@ import "./App.css";
 import LearningProgress from "./pages/LearningProgress.jsx";
 import LearningInterests from "./pages/LearningInterests.jsx";
 import FindConnections from "./pages/FindConnections.jsx";
-// import UserCourses from "./pages/MyCourses/UserCourses.jsx";
+import UserCourses from "./pages/MyCourses/UserCourses.jsx";
 import AllCourses from "./pages/allCourses/AllCourses.jsx"
 import ReviewList from "./pages/ReviewList.jsx";
 import Settings from "./pages/Settings.jsx";
@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/logout" element={<Logout />} />
-        {/* <Route path="/mycourses/:userId" element={<UserCourses />} /> */}
+        <Route path="/mycourses/:userId" element={<UserCourses />} />
  
         {/* Protected Routes */}
         <Route
