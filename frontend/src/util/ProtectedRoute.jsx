@@ -50,7 +50,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
 
-export const ProtectedRoute = ({ children }) => {
+const ProtectedRoute = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -98,3 +98,4 @@ export const ProtectedRoute = ({ children }) => {
 
   return user ? children : <Navigate to="/login" />;
 };
+export default ProtectedRoute;
