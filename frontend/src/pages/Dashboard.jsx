@@ -33,7 +33,7 @@ const MyCourses = () => {
   const fetchCourses = useCallback(async () => {
     try {
       setLoadingCourses(true);
-      const res = await axios.get("https://instructify-uidg.onrender.com/api/courses", {
+      const res = await axios.get("/api/courses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCourses(res.data.courses);
@@ -56,7 +56,7 @@ const MyCourses = () => {
   const fetchSkills = useCallback(async () => {
     try {
       setLoadingSkills(true);
-      const res = await axios.get("https://instructify-uidg.onrender.com/api/teachingskills", {
+      const res = await axios.get("/api/teachingskills", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSkills(res.data.skills || []);
@@ -70,7 +70,7 @@ const MyCourses = () => {
 
   const fetchUserNameAndProfilePic = async () => {
     try {
-      const res = await axios.get('https://instructify-uidg.onrender.com/api/auth/me', {
+      const res = await axios.get('/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`
         }
