@@ -19,7 +19,7 @@ const LearningInterests = () => {
     const fetchInterests = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/auth/get-learning-interest`,
+          `/api/auth/get-learning-interest`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const LearningInterests = () => {
     try {
       setLoading(true);
       await axios.post(
-        `http://localhost:5000/api/auth/add-learning-interest`,
+        `/api/auth/add-learning-interest`,
         { interest: newInterest },
         {
           headers: {
@@ -71,7 +71,7 @@ const LearningInterests = () => {
     try {
       setLoading(true);
       await axios.delete(
-        `http://localhost:5000/api/auth/delete-learning-interest`,
+        `/api/auth/delete-learning-interest`,
         {
           headers: { Authorization: `Bearer ${token}` },
           data: { interest },

@@ -17,7 +17,7 @@ const AllCourses = () => {
     try {
       const token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:5000/api/courses/all",
+        "/api/courses/all",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -43,8 +43,8 @@ const AllCourses = () => {
       console.log("toggleBookmark ", courseId, isBookmarked);
       const token = localStorage.getItem("token");
       const endpoint = isBookmarked
-        ? "http://localhost:5000/api/user/unbookmark"
-        : "http://localhost:5000/api/user/bookmark";
+        ? "/api/user/unbookmark"
+        : "/api/user/bookmark";
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {

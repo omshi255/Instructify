@@ -31,7 +31,7 @@ const ReviewForm = () => {
 
     try {
       // Send review data to the backend
-      const response = await fetch('http://localhost:5000/api/review/submit-review', {
+      const response = await fetch('/api/review/submit-review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

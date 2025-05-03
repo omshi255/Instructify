@@ -24,7 +24,7 @@ const SkillsDashboard = () => {
   const fetchSkills = useCallback(async () => {
     try {
       setLoading(true);
-      const { data } = await axios.get('http://localhost:5000/api/teachingskills', getConfig());
+      const { data } = await axios.get('/api/teachingskills', getConfig());
       setSkills(data.skills || []);
     } catch (error) {
       console.error('Fetch error:', error);
@@ -46,7 +46,7 @@ const SkillsDashboard = () => {
       }
       setLoading(true);
 
-      await axios.post('http://localhost:5000/api/teachingskills', { skills: [newSkill] }, getConfig());
+      await axios.post('/api/teachingskills', { skills: [newSkill] }, getConfig());
       toast.success('Skill added successfully');
       setNewSkill('');
       fetchSkills();
@@ -62,7 +62,7 @@ const SkillsDashboard = () => {
 
   const deleteSkill = async (skill) => {
     try {
-      await axios.patch('http://localhost:5000/api/teachingskills/delete-skill', { skill }, getConfig());
+      await axios.patch('/api/teachingskills/delete-skill', { skill }, getConfig());
       toast.success(`Deleted skill: ${skill}`);
       fetchSkills();
     } catch (error) {
@@ -73,7 +73,7 @@ const SkillsDashboard = () => {
 
   const deleteAllSkills = async () => {
     try {
-      await axios.delete('http://localhost:5000/api/teachingskills/all', getConfig());
+      await axios.delete('/api/teachingskills/all', getConfig());
       toast.success('All skills deleted successfully');
       setSkills([]);
     } catch (error) {

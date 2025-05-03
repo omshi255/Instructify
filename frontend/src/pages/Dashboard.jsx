@@ -33,12 +33,12 @@ const MyCourses = () => {
   const fetchCourses = useCallback(async () => {
     try {
       setLoadingCourses(true);
-      const res = await axios.get("http://localhost:5000/api/courses", {
+      const res = await axios.get("/api/courses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCourses(res.data.courses);
       const bookmardCourseRes = await axios.get(
-        "http://localhost:5000/api/user/bookmarks",
+        "/api/user/bookmarks",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -56,7 +56,7 @@ const MyCourses = () => {
   const fetchSkills = useCallback(async () => {
     try {
       setLoadingSkills(true);
-      const res = await axios.get("http://localhost:5000/api/teachingskills", {
+      const res = await axios.get("/api/teachingskills", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setSkills(res.data.skills || []);
@@ -70,7 +70,7 @@ const MyCourses = () => {
 
   const fetchUserNameAndProfilePic = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/auth/me', {
+      const res = await axios.get('/api/auth/me', {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -110,7 +110,7 @@ const MyCourses = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/courses/${id}`, {
+      await axios.delete(`/api/courses/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Course deleted!");
@@ -146,7 +146,7 @@ const MyCourses = () => {
   const totalVideosWatched = progressData.reduce((acc, cur) => acc + cur.videosWatched, 0);
   const handleDeleteProfile = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/auth/delete-profile', {
+      const response = await fetch('/api/auth/delete-profile', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

@@ -84,14 +84,14 @@ const CourseForm = ({ fetchCourses, editCourse, setEditCourse }) => {
 
       if (editCourse) {
         await axios.put(
-          `http://localhost:5000/api/courses/${editCourse._id}`,
+          `/api/courses/${editCourse._id}`,
           form,
           config
         );
         toast.success("Course updated!");
         setEditCourse(null);
       } else {
-        await axios.post("http://localhost:5000/api/courses", form, config);
+        await axios.post("/api/courses", form, config);
         toast.success("Course created!");
       }
 

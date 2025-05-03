@@ -10,9 +10,21 @@ import courseRoutes from "./routes/courseRoutes.js";
 
 import reviewRoutes from './routes/reviewRoutes.js';
 
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-import path from "path";
-dotenv.config({ path: "./backend/.env" });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+  });
+}
+
+
+dotenv.config();
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -23,7 +35,7 @@ cloudinary.config({
 connectDB(); // Connect MongoDB
 
 const app = express();
-const __dirname = path.resolve();
+
 
 // Middleware
 app.use(cors()); // Enable CORS
@@ -43,13 +55,7 @@ app.get('/', (req, res) => {
   res.send('API is running...');
 });
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  });
-}
 
 // Start the server
 const PORT = process.env.PORT || 5000;

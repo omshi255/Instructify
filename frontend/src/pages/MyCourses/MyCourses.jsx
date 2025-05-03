@@ -31,7 +31,7 @@ const MyCourses = () => {
   const fetchCourses = useCallback(async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:5000/api/courses", {
+      const res = await axios.get("/api/courses", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCourses(res.data.courses);
@@ -50,7 +50,7 @@ const MyCourses = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/courses/${id}`, {
+      await axios.delete(`/api/courses/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       toast.success("Course deleted!");

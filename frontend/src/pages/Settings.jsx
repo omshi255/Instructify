@@ -30,7 +30,7 @@ const UserProfile = () => {
 
   const fetchUserNameAndProfilePic = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/auth/me", {
+      const res = await axios.get("/api/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -67,7 +67,7 @@ const UserProfile = () => {
 
   const handleDeleteProfile = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/delete-profile", {
+      const response = await fetch("/api/auth/delete-profile", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
