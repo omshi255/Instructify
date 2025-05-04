@@ -253,6 +253,7 @@ const Navbar = () => {
               </ul>
             )}
           </li>
+          <li> <Link to="/dashboard"> Dasboard</Link></li>
           <li className="search-bar">
             <input type="text" placeholder="Search..." className="search-input" />
             <i className="fas fa-search search-icon"></i>

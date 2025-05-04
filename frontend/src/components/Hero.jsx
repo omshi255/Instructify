@@ -12,6 +12,7 @@ import Footer from '../components/Footer.jsx' // Import the Footer component
 
 const HeroSection = () => {
   // Default options for the first Lottie animation
+  const token = localStorage.getItem("token");
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -63,7 +64,7 @@ const HeroSection = () => {
           <div className="button-get-started">
             <button className="cssbuttons-io-button" >
            {/* <a href="/register">Get started</a> */}
-           <Link className="Link" to="/register">Get started</Link>
+           <Link className="Link" to={token?"/dashboard":"/register"}>Get started</Link>
               <div className="icon">
                 <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
@@ -83,7 +84,7 @@ const HeroSection = () => {
             <source src="https://videos.pexels.com/video-files/6985519/6985519-uhd_2560_1440_25fps.mp4" />
           </video>
 
-          <div className="lottie-container" style={{ width: "500px", height: "500px" }}>
+          <div className="lottie-container">
             <Lottie options={defaultOptions} height={400} width={400} style={{ position: "absolute", top: "-50px", right: "20px" }} />
           </div>
         </div>
@@ -155,7 +156,7 @@ const HeroSection = () => {
         </div>
 
         <div className="why-right">
-          <Lottie options={whyChooseUsOptions} height={600} width={600} />
+          <Lottie options={whyChooseUsOptions} />
         </div>
       </section>
       <section className="review-form-section">
