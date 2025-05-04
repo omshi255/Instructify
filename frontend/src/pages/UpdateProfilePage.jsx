@@ -28,7 +28,7 @@ const UpdateProfilePage = () => {
     const fetchProfile = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/auth/me', {
+        const response = await axios.get("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setFormData({
@@ -115,15 +115,15 @@ const UpdateProfilePage = () => {
       if (formData.portfolio) payload.portfolio = formData.portfolio;
 
       const response = await axios.put(
-        '/api/auth/update-profile',
+        "/api/auth/update-profile",
         payload,
         {
           headers: {
             Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         }
-      );
+      );  
 
       setFormData((prev) => ({
         ...prev,

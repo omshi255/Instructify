@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import "./LearningIntrests.css";
 
 import Footer from "../components/Footer";
@@ -13,7 +12,6 @@ const LearningInterests = () => {
   const [openForm, setOpenForm] = useState(false);
 
   const token = localStorage.getItem("token");
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchInterests = async () => {
@@ -37,7 +35,7 @@ const LearningInterests = () => {
     };
 
     fetchInterests();
-  }, [loading]);
+  }, [loading,token]);
 
   const handleCreateInterest = async (e) => {
     e.preventDefault();

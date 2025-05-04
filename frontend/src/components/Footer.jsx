@@ -1,34 +1,87 @@
-import React from 'react';
-import './Footer.css';
+import React, { useState } from "react";
+import "./Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faFacebook,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
-  return (
-    <div>
-      {/* <!-- Footer Section --> */}
-<footer class="footer">
-  <div class="footer-content">
-    
-    <div class="social-links">
-      <a href="https://github.com/omshi255" target="_blank" class="social-icon">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.facebook.com/your-facebook-username" target="_blank" class="social-icon">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/swati-sen-137aa8269/" target="_blank" class="social-icon">
-      <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
-    <div class="email-contact">
-      <input type="email" placeholder="Contact us via email..." class="email-input" />
-      <button class="email-submit">Submit</button>
-    </div>
-    <p>
-      Made with <span class="heart">❤️</span> by <span class="name">Swati Sen</span>
-    </p>
-  </div>
-</footer>
+  const [email, setEmail] = useState("");
 
-    </div>
-  )
+  const handleEmailSubmit = () => {
+    if (email) {
+      console.log("Email submitted:", email);
+      setEmail("");
+    }
+  };
+
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="social-links">
+          <span
+            className="social-icon"
+            onClick={() => openInNewTab("https://github.com/omshi255")}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === "Enter" && openInNewTab("https://github.com/omshi255")
+            }
+          >
+            <FontAwesomeIcon icon={faGithub} />
+          </span>
+          <span
+            className="social-icon"
+            onClick={() =>
+              openInNewTab("https://www.facebook.com/your-facebook-username")
+            }
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === "Enter" &&
+              openInNewTab("https://www.facebook.com/your-facebook-username")
+            }
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </span>
+          <span
+            className="social-icon"
+            onClick={() =>
+              openInNewTab("https://www.linkedin.com/in/swati-sen-137aa8269/")
+            }
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) =>
+              e.key === "Enter" &&
+              openInNewTab("https://www.linkedin.com/in/swati-sen-137aa8269/")
+            }
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </span>
+        </div>
+        <div className="email-contact">
+          <input
+            type="email"
+            placeholder="Contact us via email..."
+            className="email-input"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button className="email-submit" onClick={handleEmailSubmit}>
+            Submit
+          </button>
+        </div>
+        <p>
+          Made with <span className="heart">❤️</span> by{" "}
+          <span className="name">Swati Sen</span>
+        </p>
+      </div>
+    </footer>
+  );
 }

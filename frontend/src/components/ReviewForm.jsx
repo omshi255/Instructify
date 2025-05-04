@@ -31,14 +31,17 @@ const ReviewForm = () => {
 
     try {
       // Send review data to the backend
-      const response = await fetch('/api/review/submit-review', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('token')}`, // JWT token for authentication
-        },
-        body: JSON.stringify(reviewData),
-      });
+      const response = await fetch(
+        "/api/review/submit-review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // JWT token for authentication
+          },
+          body: JSON.stringify(reviewData),
+        }
+      );
 
       const data = await response.json();
 

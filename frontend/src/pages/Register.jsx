@@ -150,9 +150,13 @@ const Register = () => {
     formData.append('facebook', facebook);
 
     try {
-      const response = await axios.post('/api/auth/register', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      });
+      const response = await axios.post(
+        "/api/auth/register",
+        formData, 
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       toast.success('Registration successful! Redirecting...');
       localStorage.setItem('token', response.data.token);

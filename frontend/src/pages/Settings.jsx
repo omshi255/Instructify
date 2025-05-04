@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './Setting.css';
+import "./Setting.css";
 import Footer from "../components/Footer.jsx";
 
 const UserProfile = () => {
@@ -53,13 +53,21 @@ const UserProfile = () => {
       });
 
       let profileCompletionPercentage = 0;
-      const fields = [user.name, user.profilePic, user.bio, user.description, user.learningInterests];
+      const fields = [
+        user.name,
+        user.profilePic,
+        user.bio,
+        user.description,
+        user.learningInterests,
+      ];
       const filledFields = fields.filter(
-        (field) => field && (Array.isArray(field) ? field.length > 0 : field.length > 0)
+        (field) =>
+          field && (Array.isArray(field) ? field.length > 0 : field.length > 0)
       );
       profileCompletionPercentage = (filledFields.length / fields.length) * 100;
 
       setProfileCompletion(profileCompletionPercentage);
+      console.log(profileCompletion);
     } catch (error) {
       console.error("Failed to fetch user", error);
     }
@@ -67,13 +75,16 @@ const UserProfile = () => {
 
   const handleDeleteProfile = async () => {
     try {
-      const response = await fetch("/api/auth/delete-profile", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await fetch(
+        "/api/auth/delete-profile",
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
       const data = await response.json();
 
@@ -92,12 +103,15 @@ const UserProfile = () => {
 
   useEffect(() => {
     fetchUserNameAndProfilePic();
-  }, []);
+  });
 
   const renderSocialLink = (platform, url, iconClass) => {
     return url ? (
       <a href={url} target="_blank" rel="noopener noreferrer">
-        <i className={`fab ${iconClass}`} style={{ fontSize: "24px", margin: "10px" }}></i>
+        <i
+          className={`fab ${iconClass}`}
+          style={{ fontSize: "24px", margin: "10px" }}
+        ></i>
       </a>
     ) : (
       <p>No {platform} link available</p>
@@ -106,63 +120,75 @@ const UserProfile = () => {
 
   return (
     <>
-    
-    <div className="user-profile-card">
-      <h3 className="profile-section-heading">
-        <i className="fas fa-user-check"></i> Profile Information
-      </h3>
-      <div className="profile-header-container">
-        <img src={userProfilePic} alt="Profile" className="profile-picture" />
-        <h2 className="profile-name">{username}</h2>
-      </div>
-      <p className="profile-detail">
-        <strong className="detail-heading">Bio:</strong> {bio || "No bio available"}
-      </p>
-      <p className="profile-detail">
-        <strong className="detail-heading">Description:</strong> {description || "No description available"}
-      </p>
-      <p className="profile-detail">
-        <strong className="detail-heading">Created At:</strong> {createdAt}
-      </p>
-      <p className="profile-detail">
-        <strong className="detail-heading">Updated At:</strong> {updatedAt}
-      </p>
+      <div className="user-profile-card">
+        <h3 className="profile-section-heading">
+          <i className="fas fa-user-check"></i> Profile Information
+        </h3>
+        <div className="profile-header-container">
+          <img src={userProfilePic} alt="Profile" className="profile-picture" />
+          <h2 className="profile-name">{username}</h2>
+        </div>
+        <p className="profile-detail">
+          <strong className="detail-heading">Bio:</strong>{" "}
+          {bio || "No bio available"}
+        </p>
+        <p className="profile-detail">
+          <strong className="detail-heading">Description:</strong>{" "}
+          {description || "No description available"}
+        </p>
+        <p className="profile-detail">
+          <strong className="detail-heading">Created At:</strong> {createdAt}
+        </p>
+        <p className="profile-detail">
+          <strong className="detail-heading">Updated At:</strong> {updatedAt}
+        </p>
 
-      <div className="learning-interests-list">
-        <strong>Learning Interests:</strong>
-        <ul>
-          {learningInterests.length > 0 ? (
-            learningInterests.map((interest, index) => <li key={index}>{interest}</li>)
-          ) : (
-            <li>No learning interests listed</li>
-          )}
-        </ul>
-      </div>
+        <div className="learning-interests-list">
+          <strong>Learning Interests:</strong>
+          <ul>
+            {learningInterests.length > 0 ? (
+              learningInterests.map((interest, index) => (
+                <li key={index}>{interest}</li>
+              ))
+            ) : (
+              <li>No learning interests listed</li>
+            )}
+          </ul>
+        </div>
 
-      <div className="social-links">
-        <strong>Social Links:</strong>
-        <div className="social-icons">
-          {renderSocialLink("LinkedIn", socialLinks.linkedin, "fa-linkedin")}
-          {renderSocialLink("Discord", socialLinks.discord, "fa-discord")}
-          {renderSocialLink("GitHub", socialLinks.github, "fa-github")}
-          {renderSocialLink("Twitter", socialLinks.twitter, "fa-twitter")}
-          {renderSocialLink("Instagram", socialLinks.instagram, "fa-instagram")}
-          {renderSocialLink("Facebook", socialLinks.facebook, "fa-facebook")}
-          {renderSocialLink("Portfolio", socialLinks.portfolio, "fa-globe")}
+        <div className="social-links">
+          <strong>Social Links:</strong>
+          <div className="social-icons">
+            {renderSocialLink("LinkedIn", socialLinks.linkedin, "fa-linkedin")}
+            {renderSocialLink("Discord", socialLinks.discord, "fa-discord")}
+            {renderSocialLink("GitHub", socialLinks.github, "fa-github")}
+            {renderSocialLink("Twitter", socialLinks.twitter, "fa-twitter")}
+            {renderSocialLink(
+              "Instagram",
+              socialLinks.instagram,
+              "fa-instagram"
+            )}
+            {renderSocialLink("Facebook", socialLinks.facebook, "fa-facebook")}
+            {renderSocialLink("Portfolio", socialLinks.portfolio, "fa-globe")}
+          </div>
+        </div>
+
+        <div className="profile-action-buttons">
+          <button
+            className="button edit-profile-btn"
+            onClick={() => navigate("/dashboard/update-profile")}
+          >
+            <i className="fas fa-edit"></i> Edit Profile
+          </button>
+          <button
+            className="button delete-profile-btn"
+            onClick={handleDeleteProfile}
+          >
+            <i className="fas fa-trash-alt"></i> Delete Profile
+          </button>
         </div>
       </div>
-
-      <div className="profile-action-buttons">
-        <button className="button edit-profile-btn" onClick={() => navigate("/dashboard/update-profile")}>
-          <i className="fas fa-edit"></i> Edit Profile
-        </button>
-        <button className="button delete-profile-btn" onClick={handleDeleteProfile}>
-          <i className="fas fa-trash-alt"></i> Delete Profile
-        </button>
-      </div>
-     
-    </div>
-     <Footer/>
+      <Footer />
     </>
   );
 };

@@ -29,7 +29,7 @@ const AllCourses = () => {
 
       setCourses(data.courses);
       setLoading(false);
-    //   toast.success("Courses loaded!");
+      //   toast.success("Courses loaded!");
     } catch (err) {
       setError(err.message);
       setLoading(false);
@@ -77,11 +77,10 @@ const AllCourses = () => {
 
   useEffect(() => {
     fetchCourses();
-  }, []);
+  });
 
   return (
     <>
-      
       <div className="all-courses-container">
         <h1 className="all-courses-title">
           <FontAwesomeIcon icon={faBookmark} /> All Courses
@@ -133,8 +132,7 @@ const AllCourses = () => {
         )}
         <ToastContainer position="top-right" autoClose={2000} />
       </div>
-      <Footer/>
-
+      <Footer />
     </>
   );
 };

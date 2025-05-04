@@ -12,7 +12,9 @@ const UsersList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("/api/auth/all-users");
+        const response = await axios.get(
+          "/api/auth/all-users"
+        );
         setUsers(response.data.users);
         setLoading(false);
       } catch (error) {

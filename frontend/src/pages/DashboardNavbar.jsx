@@ -19,7 +19,7 @@ const Navbar = () => {
 
       const res = await axios.get("/api/auth/profile", {
         headers: {
-          Authorization: `Bearer ${token}`,  // Yeh line zaroori hai
+          Authorization: `Bearer ${token}`, // Yeh line zaroori hai
         },
       });
 

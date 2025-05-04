@@ -189,28 +189,3 @@
     margin-left: 180px;
   }
 }
-
-/* Existing Responsive Styles */
-/* @media (max-width: 768px) {
-  .dashboard-layout {
-    flex-direction: column;
-  }
-  
-  .dashboard-sidebar {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    overflow-x: auto;
-    border-right: none;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .dashboard-sidebar:hover {
-    width: 100%;
-  }
-
-  .dashboard-main {
-    margin-left: 0;
-    margin-top: 80px;
-  }
-} */

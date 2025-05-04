@@ -1,0 +1,15 @@
+{
+  "name": "instructify-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "npm run dev --prefix ..",
+    "start": "npm run start --prefix ..",
+    "build": "npm run build --prefix .."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
