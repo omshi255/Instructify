@@ -5,9 +5,11 @@
     background-color: #f0fff4;
     padding: 50px;
     height: 100vh;
+    
     animation: fadeIn 1s ease-in;
     border-radius: 10px; /* Optional for rounded corners */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow for a modern look */
+    
   }
   
   .hero-text {
@@ -50,6 +52,7 @@
     text-align: center;
     animation: slideInRight 1.2s ease forwards;
     overflow: hidden; /* Ensures content doesn't overflow */
+    
   }
   
   /* Triangle Video */
@@ -63,6 +66,7 @@
     top: 10%;
     left: 10%;
     z-index: 0;
+    
   }
   
   /* Circle Video */
@@ -797,5 +801,12 @@ margin-top: 2rem;
     width: 400px;
     height: 400px;
     /* border: 2px solid red; */
+  }
+}
+
+@media (min-width: 901px){
+  .hero-image{
+    height: 100%;
+    margin-top: 50px;
   }
 }
