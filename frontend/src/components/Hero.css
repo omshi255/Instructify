@@ -746,6 +746,14 @@
 
 /* For screens max-width 480px */
 @media (max-width: 600px) {
+
+.why-right {
+  margin-top: 30px;
+  width: 300px;
+  height: 300px;
+  /* border: 2px solid red; */
+}
+
  .icon-section
  {
   display: flex;
@@ -796,12 +804,6 @@ margin-top: 2rem;
     margin-left: 0px;
   }
 
-  .why-right {
-    margin-top: 30px;
-    width: 400px;
-    height: 400px;
-    /* border: 2px solid red; */
-  }
 }
 
 @media (min-width: 901px){

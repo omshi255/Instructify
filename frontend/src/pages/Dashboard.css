@@ -987,8 +987,12 @@ p {
 
 /* For 900px to 600px (Tablet) */
 @media screen and (max-width: 900px) and (min-width: 600px) {
+  .dashboradMainBox{
+    margin-left: 50px;
+  }
+  
   .dashboard-grid-9 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     width: 100%;
     padding: 0 15px;
     height: auto;
@@ -1085,6 +1089,7 @@ p {
     height: 280px;
     padding: 18px;
     margin-right: 10px;
+   
   }
 
   .progress-message {
@@ -1103,8 +1108,16 @@ p {
   .half-circle-fill {
     width: 140px;
     height: 140px;
+    
   }
-
+.profile-completion-section{
+  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
   .profile-completion-section p {
     margin-left: 120px;
   }

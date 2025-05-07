@@ -223,6 +223,7 @@ const MyCourses = () => {
 
   return (
     <>
+    <div className="dashboradMainBox">
       <h3 className="dashboard-heading">
         Hii {username ? username : "User"}!<span className="emoji">👋</span>
       </h3>
@@ -498,6 +499,7 @@ const MyCourses = () => {
 
       <ToastContainer position="top-right" autoClose={2000} />
       <Footer />
+    </div>
     </>
   );
 };

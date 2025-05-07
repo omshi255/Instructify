@@ -188,6 +188,11 @@
   }
   
   @media screen and (min-width: 600px) and (max-width: 900px) {
+    .course-list {
+      margin-left: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      /* border: 2px solid red; */
+    }
     .course-item {
       width: 100%;
       padding: 20px;
@@ -217,7 +222,7 @@
     .course-list {
       grid-template-columns: repeat(3, 1fr);
     }
-  
+    
     .course-item {
       width: 100%;
       padding: 24px;
