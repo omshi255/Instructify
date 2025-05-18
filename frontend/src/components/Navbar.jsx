@@ -296,7 +296,7 @@ const Navbar = () => {
       
   <Link to="/login" className="btn login-btn">Login</Link>
   <Link to="/register" className="btn signup-btn">Sign Up</Link>
-
+  <Link to="/logout" className="btn signup-btn">Logout</Link>
 
         </ul>
       </div>
